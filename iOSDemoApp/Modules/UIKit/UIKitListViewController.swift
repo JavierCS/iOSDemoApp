@@ -46,12 +46,11 @@ class UIKitListViewController: UIViewController {
         }
         
         var snapshot = NSDiffableDataSourceSnapshot<UIKitSection, UIKitComponent>()
+        let elementComponents = UIKitComponent.allCases.filter({ $0.section() == .uiElements })
+        let controllerComponents = UIKitComponent.allCases.filter({ $0.section() == .uiViewControllers })
         snapshot.appendSections(UIKitSection.allCases)
-        snapshot.appendItems([
-            .uiCollectionViewController,
-            .uiTabBarController,
-            .uiTableViewController
-        ], toSection: .uiViewControllers)
+        snapshot.appendItems(elementComponents, toSection: .uiElements)
+        snapshot.appendItems(controllerComponents, toSection: .uiViewControllers)
         
         dataSource.apply(snapshot)
     }

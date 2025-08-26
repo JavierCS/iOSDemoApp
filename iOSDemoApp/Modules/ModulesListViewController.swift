@@ -64,7 +64,7 @@ extension ModulesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        switch item.transitionType() {
+        switch item.transitionStyle() {
         case .push:
             show(item.navigationDestination(), sender: nil)
         case .present:
