@@ -12,4 +12,6 @@ protocol NavigationItem {
     func image() -> UIImage?
     func navigationDestination() -> UIViewController
     func transitionStyle() -> LearningTransitionStyle
+    
+    static func listController() -> NavigationItemsList
 }

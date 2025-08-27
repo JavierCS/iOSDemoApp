@@ -29,9 +29,9 @@ enum LearningModule: String, CaseIterable, NavigationItem {
             }
             return UIHostingController(rootView: navigationStack)
         case .uikit:
-            return UIKitListViewController()
+            return UIKitComponent.listController()
         case .visionKit:
-            return UIViewController()
+            return VisionKitComponent.listController()
         }
     }
     
@@ -42,5 +42,16 @@ enum LearningModule: String, CaseIterable, NavigationItem {
         default:
             return .push
         }
+    }
+    
+    static func listController() -> NavigationItemsList {
+        let listTitle = NSLocalizedString("modules", comment: .empty)
+        let list = NavigationItemsList(
+            title: listTitle,
+            dataSource: [
+                (NavigationSectionStyle.none, LearningModule.allCases as [NavigationItem])
+            ]
+        )
+        return list
     }
 }

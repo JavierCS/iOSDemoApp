@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum UIKitComponent: String, CaseIterable {
+enum UIKitComponent: String, CaseIterable, NavigationItem {
     case uiActivityIndicator
     case uiButton
     case uiDatePicker
@@ -27,28 +27,8 @@ enum UIKitComponent: String, CaseIterable {
     case uiTableViewController
     case uiCollectionViewController
     
-    func section() -> UIKitSection {
-        switch self {
-        case .uiActivityIndicator,
-                .uiButton,
-                .uiDatePicker,
-                .uiImageView,
-                .uiLabel,
-                .uiPageControl,
-                .uiPickerView,
-                .uiProgressView,
-                .uiSegmentedControl,
-                .uiSlider,
-                .uiStepper,
-                .uiSwitch,
-                .uiTextField,
-                .uiTextView:
-            return .uiElements
-        case .uiTabBarController,
-                .uiTableViewController,
-                .uiCollectionViewController:
-            return .uiViewControllers
-        }
+    func title() -> String {
+        NSLocalizedString(rawValue, comment: .empty)
     }
     
     func image() -> UIImage? {
@@ -95,7 +75,38 @@ enum UIKitComponent: String, CaseIterable {
         return UIViewController()
     }
     
-    func transitionType() -> LearningTransitionStyle {
+    func transitionStyle() -> LearningTransitionStyle {
         return .push
+    }
+    
+    static func listController() -> NavigationItemsList {
+        let listTitle = NSLocalizedString("uikit", comment: .empty)
+        let listController = NavigationItemsList(
+            title: listTitle,
+            dataSource: [
+                (NavigationSectionStyle.title(title: UIKitSection.uiElements.title()), [
+                    UIKitComponent.uiActivityIndicator,
+                    UIKitComponent.uiButton,
+                    UIKitComponent.uiDatePicker,
+                    UIKitComponent.uiImageView,
+                    UIKitComponent.uiLabel,
+                    UIKitComponent.uiPageControl,
+                    UIKitComponent.uiPickerView,
+                    UIKitComponent.uiProgressView,
+                    UIKitComponent.uiSegmentedControl,
+                    UIKitComponent.uiSlider,
+                    UIKitComponent.uiStepper,
+                    UIKitComponent.uiSwitch,
+                    UIKitComponent.uiTextField,
+                    UIKitComponent.uiTextView
+                ] as [NavigationItem]),
+                (NavigationSectionStyle.title(title: UIKitSection.uiViewControllers.title()), [
+                    UIKitComponent.uiTabBarController,
+                    UIKitComponent.uiTableViewController,
+                    UIKitComponent.uiCollectionViewController
+                ] as [NavigationItem])
+            ]
+        )
+        return listController
     }
 }

@@ -7,8 +7,12 @@
 
 import UIKit
 
-enum VisionKitComponent: String, CaseIterable {
+enum VisionKitComponent: String, CaseIterable, NavigationItem {
     case vnDocumentCameraViewController
+    
+    func title() -> String {
+        NSLocalizedString(rawValue, comment: .empty)
+    }
     
     func image() -> UIImage? {
         switch self {
@@ -18,7 +22,7 @@ enum VisionKitComponent: String, CaseIterable {
     }
     
     func navigationDestination() -> UIViewController {
-        return UIViewController()
+        return VNDocumentCameraViewControllerDemo()
     }
     
     func transitionStyle() -> LearningTransitionStyle {
@@ -26,6 +30,17 @@ enum VisionKitComponent: String, CaseIterable {
         default:
             .push
         }
+    }
+    
+    static func listController() -> NavigationItemsList {
+        let listTitle = NSLocalizedString("visionKit", comment: .empty)
+        let listController = NavigationItemsList(
+            title: listTitle,
+            dataSource: [
+                (NavigationSectionStyle.none, VisionKitComponent.allCases as [NavigationItem])
+            ]
+        )
+        return listController
     }
 }
 
