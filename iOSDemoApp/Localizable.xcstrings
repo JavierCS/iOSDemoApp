@@ -274,6 +274,17 @@
         }
       }
     },
+    "scan" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan"
+          }
+        }
+      }
+    },
     "searchable" : {
       "extractionState" : "manual",
       "localizations" : {

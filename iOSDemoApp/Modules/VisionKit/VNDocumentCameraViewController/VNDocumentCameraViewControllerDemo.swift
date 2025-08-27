@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import SwiftUI
 import VisionKit
 
 final class VNDocumentCameraViewControllerDemo: UIViewController {
-    var scanButton: UIBarButtonItem!
+    // MARK: - UI Elements
+    private var scanButton: UIBarButtonItem!
+    private var scannedContentView: UICollectionView!
+    
+    // MARK: - Logic Vars
+    private var scanResult: [(image: UIImage, result: DocumentTextResult)] = []
     
     // MARK: - Lifecycle Management
     override func viewDidLoad() {
@@ -19,12 +25,29 @@ final class VNDocumentCameraViewControllerDemo: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("vnDocumentCameraViewController", comment: .empty)
+        title = NSLocalizedString("scan", comment: .empty)
         
         view.backgroundColor = .systemGroupedBackground
         
         scanButton = UIBarButtonItem(image: UIImage(systemName: "document.viewfinder"), style: .prominent, target: self, action: #selector(didTapScanButton(_:)))
         navigationItem.setRightBarButton(scanButton, animated: false)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        scannedContentView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        scannedContentView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: String(describing: UICollectionViewCell.self))
+        scannedContentView.translatesAutoresizingMaskIntoConstraints = false
+        scannedContentView.dataSource = self
+        scannedContentView.delegate = self
+        scannedContentView.backgroundColor = .systemGroupedBackground
+        scannedContentView.isPagingEnabled = true
+        view.addSubview(scannedContentView)
+        NSLayoutConstraint.activate([
+            scannedContentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scannedContentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scannedContentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scannedContentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
     // MARK: - UI Elements Actions
@@ -36,6 +59,31 @@ final class VNDocumentCameraViewControllerDemo: UIViewController {
         let scanner = VNDocumentCameraViewController()
         scanner.delegate = self
         present(scanner, animated: true)
+    }
+    
+    func reloadScannedContent(using newContent: [(image: UIImage, result: DocumentTextResult)]) {
+        scanResult = newContent
+        scannedContentView.reloadData()
+    }
+}
+
+// MARK: - UICollectionViewDataSource Management
+extension VNDocumentCameraViewControllerDemo: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return scanResult.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: UICollectionViewCell.self), for: indexPath)
+        let pageContent = scanResult[indexPath.row]
+        cell.contentConfiguration = UIHostingConfiguration(content: { DocumentContentView(content: pageContent) })
+        return cell
+    }
+}
+
+extension VNDocumentCameraViewControllerDemo: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.frame.size
     }
 }
 
@@ -58,6 +106,7 @@ extension VNDocumentCameraViewControllerDemo: VNDocumentCameraViewControllerDele
                 }
             }
             await MainActor.run {
+                reloadScannedContent(using: combined)
                 controller.dismiss(animated: true) { [weak self] in
                     self?.showAlert(messageKey: "vnDocumentCameraViewControllerScanFinished")
                 }
