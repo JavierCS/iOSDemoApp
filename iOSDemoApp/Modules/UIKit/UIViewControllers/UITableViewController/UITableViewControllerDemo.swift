@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UITableViewControllerDemo: UITableViewController {
+final class UITableViewControllerDemo: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLayout()

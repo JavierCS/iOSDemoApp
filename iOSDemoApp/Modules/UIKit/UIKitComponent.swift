@@ -78,7 +78,7 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
         case .uiButton:
             UIButtonDemoViewController()
         case .uiDatePicker:
-            UIViewController()
+            UIDatePickerDemoViewController()
         case .uiImageView:
             UIViewController()
         case .uiLabel:

@@ -44,6 +44,6 @@ enum VisionKitComponent: String, CaseIterable, NavigationItem {
     }
 }
 
-class DemoListView: UIViewController {
+final class DemoListView: UIViewController {
     
 }

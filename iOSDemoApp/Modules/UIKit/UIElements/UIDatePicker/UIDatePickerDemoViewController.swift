@@ -1,18 +1,18 @@
 //
-//  UIButtonDemoViewController.swift
+//  UIDatePickerDemoViewController.swift
 //  iOSDemoApp
 //
-//  Created by Javier Cruz Santiago on 22/08/25.
+//  Created by Javier Cruz Santiago on 28/08/25.
 //
 
 import UIKit
 
-final class UIButtonDemoViewController: UIViewController {
+final class UIDatePickerDemoViewController: UIViewController {
     // MARK: - UI Elements
     private var tableView: UITableView!
     
     // MARK: - Logic Vars
-    private var dataSource: [UIButtonDemoSection] = UIButtonDemoSection.dataSource()
+    private var dataSource: [(title: String, items: [UIDatePickerDemoRowType])] = UIDatePickerDemoRowType.dataSource()
     
     // MARK: - Life Cycle Management
     override func viewDidLoad() {
@@ -22,11 +22,12 @@ final class UIButtonDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("uiButton", comment: .empty)
+        title = NSLocalizedString("uiDatePicker", comment: .empty)
         
         tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UIButtonDemoTablelViewCell.self, forCellReuseIdentifier: String(describing: UIButtonDemoTablelViewCell.self))
+        tableView.register(UIDatePickerDemoTableViewCell.self, forCellReuseIdentifier: String(describing: UIDatePickerDemoTableViewCell.self))
+        tableView.register(UIDatePickerTextFieldDemoTableViewCell.self, forCellReuseIdentifier: String(describing: UIDatePickerTextFieldDemoTableViewCell.self))
         tableView.dataSource = self
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -39,9 +40,13 @@ final class UIButtonDemoViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource Management
-extension UIButtonDemoViewController: UITableViewDataSource {
+extension UIDatePickerDemoViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return dataSource[section].title
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,15 +54,7 @@ extension UIButtonDemoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = String(describing: UIButtonDemoTablelViewCell.self)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? UIButtonDemoTablelViewCell else {
-            return UITableViewCell()
-        }
-        cell.draw(dataSource[indexPath.section].items[indexPath.row])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dataSource[section].name
+        let item = dataSource[indexPath.section].items[indexPath.row]
+        return item.row(for: tableView, at: indexPath)
     }
 }

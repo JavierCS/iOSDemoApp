@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationItemsList: UIViewController {
+final class NavigationItemsList: UIViewController {
     // MARK: - UI Elements
     var tableView: UITableView!
     

@@ -14,7 +14,7 @@ final class UIActivityIndicatorDemoViewController: UIViewController {
     // MARK: - Logic Vars
     private var dataSource: [UIActivityIndicatorDemoSection] = UIActivityIndicatorDemoSection.dataSource()
     
-    // MARK: - Life Cycle management
+    // MARK: - Life Cycle Management
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutConfiguration()
