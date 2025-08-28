@@ -18,6 +18,7 @@ struct PickerDemoView: View {
     
     var body: some View {
         list
+            .navigationTitle(Text(.init("picker")))
     }
     
     var list: some View {
