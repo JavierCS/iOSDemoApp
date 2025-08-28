@@ -16,7 +16,6 @@ struct UIButtonDemoSection {
             .init(
                 name: NSLocalizedString("style", comment: .empty),
                 items: [
-                    .init(style: .none),
                     .init(style: .borderedButton),
                     .init(style: .borderedProminentButton),
                     .init(style: .borderedTintedButton),
@@ -34,7 +33,6 @@ struct UIButtonDemoSection {
             .init(
                 name: NSLocalizedString("tint", comment: .empty),
                 items: [
-                    .init(style: .none, tintColor: .systemPink),
                     .init(style: .borderedButton, tintColor: .systemPink),
                     .init(style: .borderedProminentButton, tintColor: .systemPink),
                     .init(style: .borderedTintedButton, tintColor: .systemPink),
@@ -52,7 +50,6 @@ struct UIButtonDemoSection {
             .init(
                 name: NSLocalizedString("tint", comment: .empty),
                 items: [
-                    .init(style: .none, tintColor: .systemGreen),
                     .init(style: .borderedButton, tintColor: .systemGreen),
                     .init(style: .borderedProminentButton, tintColor: .systemGreen),
                     .init(style: .borderedTintedButton, tintColor: .systemGreen),

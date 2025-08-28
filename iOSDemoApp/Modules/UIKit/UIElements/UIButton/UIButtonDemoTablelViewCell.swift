@@ -39,10 +39,6 @@ final class UIButtonDemoTablelViewCell: UITableViewCell {
         let buttonStyle = model.style
         button.setTitle(buttonStyle.name(), for: .normal)
         button.configuration = buttonStyle.configuration()
-        if let tintColor = model.tintColor {
-            button.tintColor = tintColor
-        } else {
-            button.tintColor = .systemBlue
-        }
+        button.tintColor = model.tintColor ?? .systemBlue
     }
 }

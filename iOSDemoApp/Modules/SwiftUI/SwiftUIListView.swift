@@ -49,9 +49,15 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
-                    
+                    ListDemoView()
                 } label: {
                     Label(.init("list"), systemImage: "rectangle.grid.1x3")
+                }
+                
+                NavigationLink {
+                    ProgressViewDemoView()
+                } label: {
+                    Label(.init("progressView"), systemImage: "progress.indicator")
                 }
                 
                 HStack {

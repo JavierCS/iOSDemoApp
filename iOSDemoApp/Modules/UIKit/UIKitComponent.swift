@@ -74,7 +74,7 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
     func navigationDestination() -> UIViewController {
         switch self {
         case .uiActivityIndicator:
-            UIViewController()
+            UIActivityIndicatorDemoViewController()
         case .uiButton:
             UIButtonDemoViewController()
         case .uiDatePicker:

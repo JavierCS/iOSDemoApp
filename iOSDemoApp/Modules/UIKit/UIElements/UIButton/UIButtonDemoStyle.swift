@@ -8,7 +8,6 @@
 import UIKit
 
 enum UIButtonDemoStyle: String, CaseIterable {
-    case none
     case borderedButton
     case borderedProminentButton
     case borderedTintedButton
@@ -28,8 +27,6 @@ enum UIButtonDemoStyle: String, CaseIterable {
     
     func configuration() -> UIButton.Configuration? {
         switch self {
-        case .none:
-            return nil
         case .borderedButton:
             return .bordered()
         case .borderedProminentButton:

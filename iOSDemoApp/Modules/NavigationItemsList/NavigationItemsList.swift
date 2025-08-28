@@ -9,7 +9,7 @@ import UIKit
 
 class NavigationItemsList: UIViewController {
     // MARK: - UI Elements
-    var itemsList: UITableView!
+    var tableView: UITableView!
     
     // MARK: - Logic Vars
     var dataSource: [(section: NavigationSectionStyle, items: [NavigationItem])]
@@ -37,17 +37,17 @@ class NavigationItemsList: UIViewController {
         
         view.backgroundColor = .systemGroupedBackground
         
-        itemsList = UITableView(frame: .zero, style: .insetGrouped)
-        itemsList.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
-        itemsList.dataSource = self
-        itemsList.delegate = self
-        itemsList.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(itemsList)
+        tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            itemsList.topAnchor.constraint(equalTo: view.topAnchor),
-            itemsList.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            itemsList.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            itemsList.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }

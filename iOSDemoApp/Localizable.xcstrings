@@ -1,17 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "}" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "List"
-          }
-        }
-      }
-    },
     "blue" : {
       "localizations" : {
         "en" : {
@@ -182,6 +171,17 @@
         }
       }
     },
+    "list" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List"
+          }
+        }
+      }
+    },
     "modules" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -250,6 +250,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Plain Button"
+          }
+        }
+      }
+    },
+    "progressView" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progress View"
           }
         }
       }

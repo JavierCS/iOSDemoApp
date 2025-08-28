@@ -15,7 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let modulesTitle = NSLocalizedString("modules", comment: .empty)
         let modulesList = LearningModule.listController()
         let rootNavigation = UINavigationController(rootViewController: modulesList)
         window.rootViewController = rootNavigation
