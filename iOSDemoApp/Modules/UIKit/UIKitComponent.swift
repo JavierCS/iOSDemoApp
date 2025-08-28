@@ -72,7 +72,42 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
     }
     
     func navigationDestination() -> UIViewController {
-        return UIViewController()
+        switch self {
+        case .uiActivityIndicator:
+            UIViewController()
+        case .uiButton:
+            UIButtonDemoViewController()
+        case .uiDatePicker:
+            UIViewController()
+        case .uiImageView:
+            UIViewController()
+        case .uiLabel:
+            UIViewController()
+        case .uiPageControl:
+            UIViewController()
+        case .uiPickerView:
+            UIViewController()
+        case .uiProgressView:
+            UIViewController()
+        case .uiSegmentedControl:
+            UIViewController()
+        case .uiSlider:
+            UIViewController()
+        case .uiStepper:
+            UIViewController()
+        case .uiSwitch:
+            UIViewController()
+        case .uiTextField:
+            UIViewController()
+        case .uiTextView:
+            UIViewController()
+        case .uiTabBarController:
+            UIViewController()
+        case .uiTableViewController:
+            UIViewController()
+        case .uiCollectionViewController:
+            UIViewController()
+        }
     }
     
     func transitionStyle() -> LearningTransitionStyle {
