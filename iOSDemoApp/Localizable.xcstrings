@@ -247,6 +247,17 @@
         }
       }
     },
+    "image" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image"
+          }
+        }
+      }
+    },
     "inlinePickerStyle" : {
       "extractionState" : "manual",
       "localizations" : {

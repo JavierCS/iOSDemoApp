@@ -80,7 +80,7 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
         case .uiDatePicker:
             UIDatePickerDemoViewController()
         case .uiImageView:
-            UIViewController()
+            UIImageViewDemoViewController()
         case .uiLabel:
             UIViewController()
         case .uiPageControl:

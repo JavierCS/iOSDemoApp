@@ -55,6 +55,12 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
+                    ImageDemoView()
+                } label: {
+                    Label(.init("image"), systemImage: "photo")
+                }
+                
+                NavigationLink {
                     ListDemoView()
                 } label: {
                     Label(.init("list"), systemImage: "rectangle.grid.1x3")
