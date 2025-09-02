@@ -8,12 +8,14 @@
 import UIKit
 
 final class UITabBarControllerDemo: UITabBarController {
+    // MARK: - Lifecycle Management
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureLayout()
+        layoutConfiguration()
     }
     
-    private func configureLayout() {
+    // MARK: - Configuration Management
+    private func layoutConfiguration() {
         viewControllers = [
             UIViewController.redController(),
             UIViewController.greenController(),

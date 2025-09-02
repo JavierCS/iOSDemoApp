@@ -1,5 +1,5 @@
 //
-//  UIImageViewDemoViewController.swift
+//  UILabelDemoViewController.swift
 //  iOSDemoApp
 //
 //  Created by Javier Cruz Santiago on 01/09/25.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class UIImageViewDemoViewController: UIViewController {
-    // MARK: - Lifecycle Management
+final class UILabelDemoViewController: UIViewController {
+    // MARK: - LifeCycle Management
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutConfiguration()
@@ -16,8 +16,6 @@ final class UIImageViewDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("uiImageView", comment: .empty)
         
-        view.backgroundColor = .systemGroupedBackground
     }
 }

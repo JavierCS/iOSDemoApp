@@ -8,12 +8,14 @@
 import UIKit
 
 final class UITableViewControllerDemo: UITableViewController {
+    // MARK: - Lifecycle management
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureLayout()
+        layoutConfiguration()
     }
     
-    private func configureLayout() {
+    // MARK: - Configuration Management
+    private func layoutConfiguration() {
         
     }
 }

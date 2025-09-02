@@ -1,13 +1,14 @@
 //
-//  UIImageViewDemoViewController.swift
+//  UISwitchDemoViewController.swift
 //  iOSDemoApp
 //
 //  Created by Javier Cruz Santiago on 01/09/25.
 //
 
+
 import UIKit
 
-final class UIImageViewDemoViewController: UIViewController {
+final class UISwitchDemoViewController: UIViewController {
     // MARK: - Lifecycle Management
     override func viewDidLoad() {
         super.viewDidLoad()
