@@ -1,5 +1,5 @@
 //
-//  UIProgressViewDemoViewController.swift
+//  UITextViewDemoViewController.swift
 //  iOSDemoApp
 //
 //  Created by Javier Cruz Santiago on 01/09/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class UIProgressViewDemoViewController: UIViewController {
+final class UITextViewDemoViewController: UIViewController {
     // MARK: - Lifecycle Management
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ final class UIProgressViewDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("uiProgressView", comment: .empty)
+        title = NSLocalizedString("uiTextView", comment: .empty)
         
         view.backgroundColor = .systemGroupedBackground
     }

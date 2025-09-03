@@ -26,6 +26,7 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
     case uiTabBarController
     case uiTableViewController
     case uiCollectionViewController
+    case uiPageViewController
     
     func title() -> String {
         NSLocalizedString(rawValue, comment: .empty)
@@ -68,6 +69,8 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
             UIImage(systemName: "rectangle.grid.1x3")
         case .uiCollectionViewController:
             UIImage(systemName: "square.grid.3x3")
+        case .uiPageViewController:
+            UIImage(systemName: "book.pages")
         }
     }
     
@@ -82,36 +85,47 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
         case .uiImageView:
             UIImageViewDemoViewController()
         case .uiLabel:
-            UIViewController()
+            UILabelDemoViewController()
         case .uiPageControl:
-            UIViewController()
+            UIPageControlDemoViewController()
         case .uiPickerView:
-            UIViewController()
+            UIPickerViewDemoViewController()
         case .uiProgressView:
-            UIViewController()
+            UIProgressViewDemoViewController()
         case .uiSegmentedControl:
-            UIViewController()
+            UISegmentedControlDemoViewController()
         case .uiSlider:
-            UIViewController()
+            UISliderDemoViewController()
         case .uiStepper:
-            UIViewController()
+            UIStepperDemoViewController()
         case .uiSwitch:
-            UIViewController()
+            UISwitchDemoViewController()
         case .uiTextField:
-            UIViewController()
+            UITextFieldDemoViewController()
         case .uiTextView:
-            UIViewController()
+            UITextViewDemoViewController()
         case .uiTabBarController:
-            UIViewController()
+            UITabBarControllerDemo()
         case .uiTableViewController:
-            UIViewController()
+            UITableViewControllerDemo()
         case .uiCollectionViewController:
-            UIViewController()
+            UICollectionViewControllerDemo()
+        case .uiPageViewController:
+            UIPageViewControllerDemo(pages: [
+                UIViewController.redController(),
+                UIViewController.greenController(),
+                UIViewController.blueController()
+            ])
         }
     }
     
     func transitionStyle() -> LearningTransitionStyle {
-        return .push
+        switch self {
+        case .uiTabBarController:
+            return .present
+        default:
+            return .push
+        }
     }
     
     static func listController() -> NavigationItemsList {
@@ -138,7 +152,8 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
                 (NavigationSectionStyle.title(title: UIKitSection.uiViewControllers.title()), [
                     UIKitComponent.uiTabBarController,
                     UIKitComponent.uiTableViewController,
-                    UIKitComponent.uiCollectionViewController
+                    UIKitComponent.uiCollectionViewController,
+                    UIKitComponent.uiPageViewController
                 ] as [NavigationItem])
             ]
         )

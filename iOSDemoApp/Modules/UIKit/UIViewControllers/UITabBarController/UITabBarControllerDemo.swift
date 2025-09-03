@@ -16,6 +16,10 @@ final class UITabBarControllerDemo: UITabBarController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
+        title = NSLocalizedString("uiTabBarController", comment: .empty)
+        
+        view.backgroundColor = .systemGroupedBackground
+        
         viewControllers = [
             UIViewController.redController(),
             UIViewController.greenController(),

@@ -16,7 +16,7 @@ final class UISegmentedControlDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("uiImageView", comment: .empty)
+        title = NSLocalizedString("uiSegmentedControl", comment: .empty)
         
         view.backgroundColor = .systemGroupedBackground
     }

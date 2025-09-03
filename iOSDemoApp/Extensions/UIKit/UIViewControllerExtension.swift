@@ -9,27 +9,36 @@ import UIKit
 
 extension UIViewController {
     // MARK: - Pre Configured Controllers
-    static func redController() -> UIViewController {
+    static func redController(embeddedInNavigation: Bool = false) -> UIViewController {
         let redController = UIViewController()
         redController.title = NSLocalizedString("redController", comment: .empty)
         redController.view.backgroundColor = .systemRed
         redController.tabBarItem = UITabBarItem(title: NSLocalizedString("red", comment: .empty), image: UIImage(systemName: "switch.2"), selectedImage: nil)
+        if embeddedInNavigation {
+            return UINavigationController(rootViewController: redController)
+        }
         return redController
     }
     
-    static func greenController() -> UIViewController {
+    static func greenController(embeddedInNavigation: Bool = false) -> UIViewController {
         let greenController = UIViewController()
         greenController.title = NSLocalizedString("greenController", comment: .empty)
         greenController.view.backgroundColor = .systemGreen
         greenController.tabBarItem = UITabBarItem(title: NSLocalizedString("green", comment: .empty), image: UIImage(systemName: "xbox.logo"), selectedImage: nil)
+        if embeddedInNavigation {
+            return UINavigationController(rootViewController: greenController)
+        }
         return greenController
     }
     
-    static func blueController() -> UIViewController {
+    static func blueController(embeddedInNavigation: Bool = false) -> UIViewController {
         let blueController = UIViewController()
         blueController.title = NSLocalizedString("blueController", comment: .empty)
         blueController.view.backgroundColor = .systemBlue
         blueController.tabBarItem = UITabBarItem(title: NSLocalizedString("blue", comment: .empty), image: UIImage(systemName: "playstation.logo"), selectedImage: nil)
+        if embeddedInNavigation {
+            return UINavigationController(rootViewController: blueController)
+        }
         return blueController
     }
     

@@ -16,7 +16,7 @@ final class UIPickerViewDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("uiImageView", comment: .empty)
+        title = NSLocalizedString("uiPickerView", comment: .empty)
         
         view.backgroundColor = .systemGroupedBackground
     }

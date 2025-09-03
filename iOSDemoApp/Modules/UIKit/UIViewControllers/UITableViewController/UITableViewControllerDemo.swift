@@ -16,6 +16,8 @@ final class UITableViewControllerDemo: UITableViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
+        title = NSLocalizedString("uiTableViewController", comment: .empty)
         
+        view.backgroundColor = .systemGroupedBackground
     }
 }

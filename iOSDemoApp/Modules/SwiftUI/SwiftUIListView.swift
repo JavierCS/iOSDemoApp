@@ -35,7 +35,7 @@ struct SwiftUIListView: View {
     
     var itemsList: some View {
         List {
-            Section(.init("uielements")) {
+            Section(.init("uiElements")) {
                 NavigationLink {
                     ButtonDemoView()
                 } label: {

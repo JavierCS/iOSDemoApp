@@ -16,7 +16,7 @@ final class UIStepperDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("uiImageView", comment: .empty)
+        title = NSLocalizedString("uiStepper", comment: .empty)
         
         view.backgroundColor = .systemGroupedBackground
     }

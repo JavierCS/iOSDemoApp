@@ -16,7 +16,7 @@ final class UIPageControlDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("uiImageView", comment: .empty)
+        title = NSLocalizedString("uiPageControl", comment: .empty)
         
         view.backgroundColor = .systemGroupedBackground
     }

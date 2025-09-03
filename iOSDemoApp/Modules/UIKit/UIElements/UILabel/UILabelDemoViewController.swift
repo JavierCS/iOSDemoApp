@@ -16,6 +16,8 @@ final class UILabelDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
+        title = NSLocalizedString("uiLabel", comment: .empty)
         
+        view.backgroundColor = .systemGroupedBackground
     }
 }

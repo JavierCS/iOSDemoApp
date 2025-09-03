@@ -16,7 +16,7 @@ final class UISliderDemoViewController: UIViewController {
     
     // MARK: - Configuration Management
     private func layoutConfiguration() {
-        title = NSLocalizedString("uiImageView", comment: .empty)
+        title = NSLocalizedString("uiSlider", comment: .empty)
         
         view.backgroundColor = .systemGroupedBackground
     }

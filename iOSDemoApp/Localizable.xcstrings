@@ -721,6 +721,17 @@
         }
       }
     },
+    "uiPageViewController" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UIPageViewController"
+          }
+        }
+      }
+    },
     "uiPickerView" : {
       "extractionState" : "manual",
       "localizations" : {
