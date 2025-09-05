@@ -408,6 +408,17 @@
         }
       }
     },
+    "protocols" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protocols"
+          }
+        }
+      }
+    },
     "red" : {
       "localizations" : {
         "en" : {
@@ -651,6 +662,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "UICollectioViewController"
+          }
+        }
+      }
+    },
+    "uiContentConfiguration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UIContentConfiguration"
           }
         }
       }

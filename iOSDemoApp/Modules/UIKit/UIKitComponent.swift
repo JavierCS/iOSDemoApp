@@ -28,6 +28,8 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
     case uiCollectionViewController
     case uiPageViewController
     
+    case uiContentConfiguration
+    
     func title() -> String {
         NSLocalizedString(rawValue, comment: .empty)
     }
@@ -71,6 +73,9 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
             UIImage(systemName: "square.grid.3x3")
         case .uiPageViewController:
             UIImage(systemName: "book.pages")
+            
+        case .uiContentConfiguration:
+            UIImage(systemName: "swift")
         }
     }
     
@@ -116,6 +121,9 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
                 UIViewController.greenController(),
                 UIViewController.blueController()
             ])
+            
+        case .uiContentConfiguration:
+            UIContentConfigurationDemoViewController()
         }
     }
     
@@ -154,7 +162,10 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
                     UIKitComponent.uiTableViewController,
                     UIKitComponent.uiCollectionViewController,
                     UIKitComponent.uiPageViewController
-                ] as [NavigationItem])
+                ] as [NavigationItem]),
+                (NavigationSectionStyle.title(title: UIKitSection.protocols.title()), [
+                    UIKitComponent.uiContentConfiguration
+                ])
             ]
         )
         return listController

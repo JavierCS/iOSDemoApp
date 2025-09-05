@@ -58,6 +58,15 @@ extension NavigationItemsList: UITableViewDataSource {
         return dataSource.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch dataSource[section].section {
+        case .none:
+            return nil
+        case .title(let title):
+            return title
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource[section].items.count
     }

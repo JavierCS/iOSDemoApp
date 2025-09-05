@@ -10,6 +10,7 @@ import Foundation
 enum UIKitSection: String, CaseIterable {
     case uiElements
     case uiViewControllers
+    case protocols
     
     func title() -> String {
         NSLocalizedString(rawValue, comment: .empty)
