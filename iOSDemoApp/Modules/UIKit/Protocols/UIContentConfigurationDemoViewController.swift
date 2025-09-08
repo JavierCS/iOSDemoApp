@@ -7,35 +7,16 @@
 
 import UIKit
 
-struct RedContentConfiguration: UIContentConfiguration {
-    func makeContentView() -> any UIView & UIContentView {
-        return RedContentView(configuration: self)
-    }
-    
-    func updated(for state: any UIConfigurationState) -> RedContentConfiguration {
-        return self
-    }
-}
-
-final class RedContentView: UIView, UIContentView {
-    var configuration: any UIContentConfiguration
-    
-    init(configuration: RedContentConfiguration) {
-        self.configuration = configuration
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 final class UIContentConfigurationDemoViewController: UIViewController {
     // MARK: - UIElements
     private var tableView: UITableView!
     
     // MARK: - Logic Vars
-    private var dataSource: [UIContentConfiguration] = []
+    private var dataSource: [UIContentConfiguration] = [
+        ColorContentConfiguration(title: "Red Configuration", color: .red),
+        ColorContentConfiguration(title: "Green Configuration", color: .green),
+        ColorContentConfiguration(title: "Blue Configuration", color: .blue)
+    ]
     
     // MARK: - Life Cycle Management
     override func viewDidLoad() {
@@ -66,6 +47,8 @@ extension UIContentConfigurationDemoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
+        cell.contentConfiguration = dataSource[indexPath.row].updated(for: cell.configurationState)
+        return cell
     }
 }
