@@ -29,4 +29,14 @@ struct UnsplashPhoto: Codable {
 //    let topic_submissions
     let asset_type: String?
     let user: UnsplashUser?
+    
+    static func get() async throws -> [UnsplashPhoto] {
+        do {
+            let url = try UnsplashAPIPath.urlForPath(for: .photosPath)
+            let photos = try await NetworkDataManager.shared.get(responseType: [UnsplashPhoto].self, from: url)
+            return photos
+        } catch {
+            throw error
+        }
+    }
 }
