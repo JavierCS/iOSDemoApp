@@ -53,7 +53,7 @@
 		7F3E38C22E57CAD30066FB8E /* Exceptions for "iOSDemoApp" folder in "iOSDemoAppTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"GoogleService-Info.plist",
+				"Firebase/GoogleService-Info.plist",
 				Localizable.xcstrings,
 				Resources/Firebase/Analytics/FBLPromises.xcframework,
 				Resources/Firebase/Analytics/FirebaseAnalytics.xcframework,
@@ -75,7 +75,7 @@
 		7F3E38C32E57CAD30066FB8E /* Exceptions for "iOSDemoApp" folder in "iOSDemoAppUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"GoogleService-Info.plist",
+				"Firebase/GoogleService-Info.plist",
 				Localizable.xcstrings,
 				Resources/Firebase/Analytics/FBLPromises.xcframework,
 				Resources/Firebase/Analytics/FirebaseAnalytics.xcframework,
