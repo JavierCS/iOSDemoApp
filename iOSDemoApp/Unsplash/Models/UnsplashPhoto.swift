@@ -39,4 +39,14 @@ struct UnsplashPhoto: Codable {
             throw error
         }
     }
+    
+    func contentConfiguration(for style: UnsplashPhotoContentViewStyle = .complete) -> UnsplashPhotoContentConfiguration {
+        UnsplashPhotoContentConfiguration(style: style, photo: self)
+    }
+}
+
+extension UnsplashPhoto: Equatable {
+    static func == (lhs: UnsplashPhoto, rhs: UnsplashPhoto) -> Bool {
+        lhs.id == rhs.id
+    }
 }

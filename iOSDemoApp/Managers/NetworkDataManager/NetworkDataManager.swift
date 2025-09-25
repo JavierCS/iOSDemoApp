@@ -29,4 +29,10 @@ final class NetworkDataManager {
         decoder.dateDecodingStrategy = .iso8601
         return try decoder.decode(responseType, from: data)
     }
+    
+    func data(from url: URL) async throws -> Data {
+        var request = URLRequest(url: url)
+        let (data, _) = try await session.data(for: request)
+        return data
+    }
 }
