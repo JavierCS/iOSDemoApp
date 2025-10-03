@@ -33,10 +33,3 @@ struct UnsplashSlugs: Codable {
         return en
     }
 }
-
-extension String {
-    var capitalizedFirst: String {
-        guard let first = first else { return self }
-        return first.uppercased() + dropFirst()
-    }
-}
