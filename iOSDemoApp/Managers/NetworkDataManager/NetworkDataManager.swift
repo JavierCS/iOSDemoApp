@@ -31,7 +31,7 @@ final class NetworkDataManager {
     }
     
     func data(from url: URL) async throws -> Data {
-        var request = URLRequest(url: url)
+        let request = URLRequest(url: url)
         let (data, _) = try await session.data(for: request)
         return data
     }
