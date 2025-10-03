@@ -30,6 +30,12 @@ struct UnsplashPhoto: Codable {
     let asset_type: String?
     let user: UnsplashUser?
     
+    // MARK: Utils Functions
+    func localizedSlug() -> String? {
+        return alternative_slugs?.localizedSlug()
+    }
+    
+    // MARK: Network Management
     static func get() async throws -> [UnsplashPhoto] {
         do {
             let url = try UnsplashAPIPath.urlForPath(for: .photosPath)
@@ -40,11 +46,13 @@ struct UnsplashPhoto: Codable {
         }
     }
     
+    // MARK: Drawing Functions
     func contentConfiguration(for style: UnsplashPhotoContentViewStyle = .complete) -> UnsplashPhotoContentConfiguration {
         UnsplashPhotoContentConfiguration(style: style, photo: self)
     }
 }
 
+// MARK: - Equatable Management
 extension UnsplashPhoto: Equatable {
     static func == (lhs: UnsplashPhoto, rhs: UnsplashPhoto) -> Bool {
         lhs.id == rhs.id

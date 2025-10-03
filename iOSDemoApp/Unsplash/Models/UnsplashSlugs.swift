@@ -17,4 +17,26 @@ struct UnsplashSlugs: Codable {
     let de: String?
     let pt: String?
     let id: String?
+    
+    func localizedSlug() -> String? {
+        let localeId = Locale.current.identifier
+        let mirror = Mirror(reflecting: self)
+        for localization in mirror.children {
+            if let localizationId = localization.label,
+               localeId.range(of: localizationId, options: .caseInsensitive) != nil,
+               let completeSlug = localization.value as? String {
+                let slugComponents = completeSlug.split(separator: "-").dropLast()
+                let slug = slugComponents.joined(separator: " ")
+                return slug.capitalizedFirst + "."
+            }
+        }
+        return en
+    }
+}
+
+extension String {
+    var capitalizedFirst: String {
+        guard let first = first else { return self }
+        return first.uppercased() + dropFirst()
+    }
 }
