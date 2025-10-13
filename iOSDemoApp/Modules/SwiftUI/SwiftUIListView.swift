@@ -49,9 +49,27 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
+                    DividerDemoView()
+                } label: {
+                    Label(.init("divider"), systemImage: "square.grid.3x1.below.line.grid.1x2")
+                }
+                
+                NavigationLink {
+                    FormDemoView()
+                } label: {
+                    Label(.init("form"), systemImage: "rectangle.and.pencil.and.ellipsis")
+                }
+                
+                NavigationLink {
                     GridDemoView()
                 } label: {
                     Label(.init("grid"), systemImage: "square.grid.3x3")
+                }
+                
+                NavigationLink {
+                    GroupDemoView()
+                } label: {
+                    Label(.init("group"), systemImage: "rectangle.3.group")
                 }
                 
                 NavigationLink {
@@ -61,15 +79,27 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
+                    LabelDemoView()
+                } label: {
+                    Label(.init("label"), systemImage: "richtext.page")
+                }
+                
+                NavigationLink {
+                    LinkDemoView()
+                } label: {
+                    Label("link", systemImage: "link")
+                }
+                
+                NavigationLink {
                     ListDemoView()
                 } label: {
                     Label(.init("list"), systemImage: "rectangle.grid.1x3")
                 }
                 
                 NavigationLink {
-                    ProgressViewDemoView()
+                    MenuDemoView()
                 } label: {
-                    Label(.init("progressView"), systemImage: "progress.indicator")
+                    Label(.init("menu"), systemImage: "filemenu.and.selection")
                 }
                 
                 HStack {
@@ -97,9 +127,45 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
+                    ProgressViewDemoView()
+                } label: {
+                    Label(.init("progressView"), systemImage: "progress.indicator")
+                }
+                
+                NavigationLink {
+                    ScrollViewDemoView()
+                } label: {
+                    Label(.init("scrollView"), systemImage: "scroll")
+                }
+                
+                NavigationLink {
+                    ShapesDemoView()
+                } label: {
+                    Label(.init("shapes"), systemImage: "triangleshape")
+                }
+                
+                NavigationLink {
                     SliderDemoView()
                 } label: {
                     Label(.init("slider"), systemImage: "slider.horizontal.3")
+                }
+                
+                NavigationLink {
+                    SpacerDemoView()
+                } label: {
+                    Label(.init("spacer"), systemImage: "space")
+                }
+                
+                NavigationLink {
+                    StacksDemoView()
+                } label: {
+                    Label(.init("stackViews"), systemImage: "square.stack.3d.up")
+                }
+                
+                NavigationLink {
+                    StepperDemoView()
+                } label: {
+                    Label(.init("stepper"), systemImage: "shoeprints.fill")
                 }
                 
                 NavigationLink {
@@ -115,9 +181,21 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
+                    TextFieldDemoView()
+                } label: {
+                    Label(.init("textField"), systemImage: "rectangle.and.pencil.and.ellipsis")
+                }
+                
+                NavigationLink {
                     ToggleDemoView()
                 } label: {
                     Label(.init("toggle"), systemImage: "switch.2")
+                }
+                
+                NavigationLink {
+                    ViewThatFitsDemoView()
+                } label: {
+                    Label(.init("viewThatFits"), systemImage: "arrow.up.left.and.arrow.down.right")
                 }
                 
                 NavigationLink {
