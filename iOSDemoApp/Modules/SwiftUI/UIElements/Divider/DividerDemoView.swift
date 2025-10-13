@@ -9,10 +9,40 @@ import SwiftUI
 
 struct DividerDemoView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            VStack(alignment: .leading) {
+                Text("Text One")
+                Divider()
+                
+                Text("Text Two")
+                    .frame(maxWidth: .infinity)
+                Divider()
+                
+                Text("Text Three")
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                Divider()
+                    .padding(.bottom)
+                
+                HStack {
+                    Image(systemName: "apple.logo")
+                        .frame(maxWidth: .infinity)
+                    Divider()
+                    
+                    Image(systemName: "apple.logo")
+                        .frame(maxWidth: .infinity)
+                    Divider()
+                    
+                    Image(systemName: "apple.logo")
+                        .frame(maxWidth: .infinity)
+                }
+            }
+        }
+        .navigationTitle(.init("divider"))
     }
 }
 
 #Preview {
-    DividerDemoView()
+    NavigationStack {
+        DividerDemoView()
+    }
 }
