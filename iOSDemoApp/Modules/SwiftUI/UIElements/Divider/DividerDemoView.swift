@@ -11,14 +11,14 @@ struct DividerDemoView: View {
     var body: some View {
         List {
             VStack(alignment: .leading) {
-                Text("Text One")
+                Text(.init("textOne"))
                 Divider()
                 
-                Text("Text Two")
+                Text(.init("textTwo"))
                     .frame(maxWidth: .infinity)
                 Divider()
                 
-                Text("Text Three")
+                Text(.init("textThree"))
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 Divider()
                     .padding(.bottom)
