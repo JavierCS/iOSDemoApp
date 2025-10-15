@@ -73,6 +73,12 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
+                    GroupBoxDemoView()
+                } label: {
+                    Label(.init("groupBox"), systemImage: "text.rectangle")
+                }
+                
+                NavigationLink {
                     ImageDemoView()
                 } label: {
                     Label(.init("image"), systemImage: "photo")

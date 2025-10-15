@@ -169,6 +169,17 @@
         }
       }
     },
+    "customStyle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom Style"
+          }
+        }
+      }
+    },
     "darkMode" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -187,6 +198,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date Picker"
+          }
+        }
+      }
+    },
+    "default" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
           }
         }
       }
@@ -364,6 +386,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Group"
+          }
+        }
+      }
+    },
+    "groupBox" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Group Box"
           }
         }
       }
@@ -855,6 +888,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Small"
+          }
+        }
+      }
+    },
+    "someContent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Some Content …"
           }
         }
       }
