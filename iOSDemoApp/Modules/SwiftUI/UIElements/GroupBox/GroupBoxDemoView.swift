@@ -52,28 +52,3 @@ struct GroupBoxDemoView: View {
         GroupBoxDemoView()
     }
 }
-
-
-struct CardGroupBoxStyle: GroupBoxStyle {
-    let showLabel: Bool
-    
-    init(showLabel: Bool = true) {
-        self.showLabel = showLabel
-    }
-    
-    func makeBody(configuration: Configuration) -> some View {
-        VStack {
-            if showLabel {
-                configuration.label
-                    .font(.headline)
-            }
-            configuration.content
-        }
-        .padding()
-        .background {
-            RoundedRectangle(cornerRadius: 8)
-                .foregroundStyle(.white)
-                .shadow(radius: 5)
-        }
-    }
-}
