@@ -74,6 +74,7 @@ struct LabelDemoView: View {
                 .frame(maxWidth: .infinity)
             }
         }
+        .navigationTitle(.init("label"))
     }
     
     @ViewBuilder
@@ -103,61 +104,7 @@ struct LabelDemoView: View {
 }
 
 #Preview {
-    LabelDemoView()
-}
-
-struct LeadingIconLabelStyle: LabelStyle {
-    let spacing: CGFloat
-    
-    init(spacing: CGFloat = 16) {
-        self.spacing = spacing
-    }
-    
-    func makeBody(configuration: Configuration) -> some View {
-        HStack(spacing: spacing) {
-            configuration.icon
-                .foregroundStyle(Color.accentColor)
-            configuration.title
-        }
-    }
-}
-
-struct TopIconLabelStyle: LabelStyle {
-    let spacing: CGFloat?
-    
-    init(spacing: CGFloat? = nil) {
-        self.spacing = spacing
-    }
-    
-    func makeBody(configuration: Configuration) -> some View {
-        VStack(spacing: spacing) {
-            configuration.icon
-                .foregroundStyle(Color.accentColor)
-            configuration.title
-        }
-    }
-}
-
-struct BottomIconLabelStyle: LabelStyle {
-    let spacing: CGFloat?
-    
-    init(spacing: CGFloat? = nil) {
-        self.spacing = spacing
-    }
-    
-    func makeBody(configuration: Configuration) -> some View {
-        VStack(spacing: spacing) {
-            configuration.title
-            configuration.icon
-                .foregroundStyle(Color.accentColor)
-        }
-    }
-}
-
-struct RedBorderedLabelStyle: LabelStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Label(configuration)
-            .padding()
-            .border(.red)
+    NavigationStack {
+        LabelDemoView()
     }
 }
