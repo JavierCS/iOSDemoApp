@@ -44,9 +44,6 @@ struct CheckBoxToggleStyle: ToggleStyle {
                     }
                 }
         }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(Text("Casilla de verificación"))
-        .accessibilityValue(Text(configuration.isOn ? "Marcado" : "Sin marcar"))
     }
 }
 
