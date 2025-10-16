@@ -108,6 +108,12 @@ struct SwiftUIListView: View {
                     Label(.init("menu"), systemImage: "filemenu.and.selection")
                 }
                 
+                NavigationLink {
+                    MultiDatePickerDemoView()
+                } label: {
+                    Label(.init("multiDatePicker"), systemImage: "calendar")
+                }
+                
                 HStack {
                     Label(.init("navigationSplitView"), systemImage: "sidebar.left")
                     Spacer()
