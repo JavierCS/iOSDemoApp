@@ -184,6 +184,17 @@
         }
       }
     },
+    "both" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Both"
+          }
+        }
+      }
+    },
     "bottomIconStyle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -571,6 +582,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hello, World!"
+          }
+        }
+      }
+    },
+    "horizontal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal"
           }
         }
       }
@@ -1119,6 +1141,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scroll View"
+          }
+        }
+      }
+    },
+    "scrollViewBottom" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scroll View Bottom"
+          }
+        }
+      }
+    },
+    "scrollViewTop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scroll View Top"
           }
         }
       }
@@ -1754,6 +1798,17 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Value: %1$lld Color: %2$@"
+          }
+        }
+      }
+    },
+    "vertical" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertical"
           }
         }
       }
