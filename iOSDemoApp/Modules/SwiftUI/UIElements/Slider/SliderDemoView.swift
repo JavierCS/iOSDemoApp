@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct SliderDemoView: View {
-    @State private var value: CGFloat = 50
+    @State private var valueOne: CGFloat = 50
+    @State private var valueTwo: CGFloat = 50
+    @State private var valueThree: CGFloat = 0
+    @State private var color: Color = .primary
+    @State private var isEditing = false
     
     var body: some View {
         list
@@ -17,7 +21,22 @@ struct SliderDemoView: View {
     
     var list: some View {
         List {
-            Slider(value: $value)
+            Section(.init("initialization")) {
+                Slider(value: $valueOne, in: 0...100, step: 5)
+                
+                Slider(value: $valueThree, in: 0...10, step: 1, neutralValue: nil, enabledBounds: nil) {
+                    Text(.init("label"))
+                } currentValueLabel: {
+                    Text("\(valueThree)")
+                } minimumValueLabel: {
+                    Text("0")
+                } maximumValueLabel: {
+                    Text("10")
+                } onEditingChanged: { editing in
+                    isEditing = editing
+                }
+                .foregroundStyle(isEditing ? Color.primary : Color.gray)
+            }
         }
     }
 }
