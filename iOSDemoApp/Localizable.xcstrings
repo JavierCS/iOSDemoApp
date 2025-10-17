@@ -95,6 +95,17 @@
         }
       }
     },
+    "basicGeometryForms" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basic Geometry Forms"
+          }
+        }
+      }
+    },
     "blue" : {
       "localizations" : {
         "en" : {
@@ -214,6 +225,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Button"
+          }
+        }
+      }
+    },
+    "capsule" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capsule"
+          }
+        }
+      }
+    },
+    "circle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circle "
           }
         }
       }
@@ -438,6 +471,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Editing"
+          }
+        }
+      }
+    },
+    "ellipse" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ellipse"
           }
         }
       }
@@ -1059,6 +1103,17 @@
         }
       }
     },
+    "rectangle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rectangle"
+          }
+        }
+      }
+    },
     "red" : {
       "localizations" : {
         "en" : {
@@ -1097,6 +1152,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rename"
+          }
+        }
+      }
+    },
+    "roundedRectangle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded Rectangle"
           }
         }
       }
@@ -1775,6 +1841,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "UI View Controllers"
+          }
+        }
+      }
+    },
+    "unevenRoundedRectangle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uneven Rounded Rectangle"
           }
         }
       }
