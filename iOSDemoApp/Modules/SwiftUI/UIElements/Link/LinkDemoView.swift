@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct LinkDemoView: View {
+    let linkUrl = URL(string: "https://developer.apple.com/documentation/SwiftUI/Link")!
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section(.init("initialization")) {
+                Link(.init("linkReference"), destination: linkUrl)
+                
+                Link(destination: linkUrl) {
+                    Label(.init("appleDeveloperDocumentation"), systemImage: "link")
+                }
+            }
+        }
+        .navigationTitle(.init("link"))
     }
 }
 
 #Preview {
-    LinkDemoView()
+    NavigationStack {
+        LinkDemoView()
+    }
 }

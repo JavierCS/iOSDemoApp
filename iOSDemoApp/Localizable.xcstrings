@@ -39,6 +39,17 @@
         }
       }
     },
+    "appleDeveloperDocumentation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Developer Documentation"
+          }
+        }
+      }
+    },
     "automaticPickerStyle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -594,6 +605,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Link"
+          }
+        }
+      }
+    },
+    "linkReference" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View the documentation for the Link component"
           }
         }
       }
