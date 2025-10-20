@@ -25,6 +25,11 @@ struct ProgressViewDemoView: View {
                 progressView(style: .linear(value: 50, total: 100))
             }
             
+            Section(.init("customStyle")) {
+                progressView(style: .linear(value: 50, total: 100))
+                    .progressViewStyle(CustomProgressViewStyle())
+            }
+            
             Section(.init("tint")) {
                 progressView()
                 progressView(style: .linear(value: 50, total: 100))

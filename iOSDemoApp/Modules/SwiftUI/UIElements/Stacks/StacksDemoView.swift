@@ -7,12 +7,87 @@
 
 import SwiftUI
 
+enum StackHorientation: String, CaseIterable {
+    case v
+    case h
+    case z
+    
+    func localizedName() -> String {
+        NSLocalizedString(rawValue, comment: .empty)
+    }
+    
+    func systemImageName() -> String {
+        switch self {
+        case .v:
+            "arrow.down"
+        case .h:
+            "arrow.right"
+        case .z:
+            "square.stack.3d.up"
+        }
+    }
+}
+
 struct StacksDemoView: View {
+    @State private var horientation: StackHorientation = .v
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section(horientation.localizedName()) {
+                getStack()
+            }
+        }
+        .navigationTitle(.init("stackViews"))
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Picker(.init(.empty), selection: $horientation) {
+                        ForEach(StackHorientation.allCases, id: \.self) { horientation in
+                            Label(horientation.localizedName(), systemImage: horientation.systemImageName()).tag(horientation)
+                        }
+                    }
+                } label: {
+                    Image(systemName: "line.3.horizontal")
+                }
+
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func getStack() -> some View {
+        switch horientation {
+        case .v:
+            VStack {
+                getShapes()
+            }
+        case .h:
+            HStack {
+                getShapes()
+            }
+        case .z:
+            ZStack {
+                getShapes()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func getShapes() -> some View {
+        Rectangle()
+            .frame(width: 100, height: 150)
+            .foregroundStyle(.red)
+        Circle()
+            .frame(width: 90, height: 90)
+            .foregroundStyle(.green)
+        Ellipse()
+            .frame(width: 80, height: 45)
+            .foregroundStyle(.blue)
     }
 }
 
 #Preview {
-    StacksDemoView()
+    NavigationStack {
+        StacksDemoView()
+    }
 }
