@@ -15,43 +15,67 @@ struct ButtonDemoView: View {
     
     var buttonDemo: some View {
         List {
-            Section("style") {
-                Button("button") { }
-                Button("borderedButton") { }
-                    .buttonStyle(.bordered)
-                Button("borderedProminentButton") { }
-                    .buttonStyle(.borderedProminent)
-                Button("borderlessButton") { }
-                    .buttonStyle(.borderless)
-                Button("glassButton") { }
-                    .buttonStyle(.glass)
-                Button("glassProminentButton") { }
+            Section(.init("initialization")) {
+                VStack {
+                    Button("Button") { }
                     .buttonStyle(.glassProminent)
-                Button("plainButton") { }
-                    .buttonStyle(.plain)
+                    
+                    Button { } label: {
+                        Label("Button", systemImage: "swift")
+                    }
+                    .buttonStyle(.glass)
+                    
+                    Button { } label: {
+                        Image(systemName: "apple.logo")
+                    }
+                    .buttonStyle(.glassProminent)
+                }
+                .frame(maxWidth: .infinity)
+            }
+            
+            Section("style") {
+                VStack {
+                    Button("button") { }
+                    Button("borderedButton") { }
+                        .buttonStyle(.bordered)
+                    Button("borderedProminentButton") { }
+                        .buttonStyle(.borderedProminent)
+                    Button("borderlessButton") { }
+                        .buttonStyle(.borderless)
+                    Button("glassButton") { }
+                        .buttonStyle(.glass)
+                    Button("glassProminentButton") { }
+                        .buttonStyle(.glassProminent)
+                    Button("plainButton") { }
+                        .buttonStyle(.plain)
+                }
+                .frame(maxWidth: .infinity)
             }
             
             Section("tint") {
-                Button("button") { }
-                    .tint(.pink)
-                Button("borderedButton") { }
-                    .buttonStyle(.bordered)
-                    .tint(.pink)
-                Button("borderedProminentButton") { }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.pink)
-                Button("borderlessButton") { }
-                    .buttonStyle(.borderless)
-                    .tint(.pink)
-                Button("glassButton") { }
-                    .buttonStyle(.glass)
-                    .tint(.pink)
-                Button("glassProminentButton") { }
-                    .buttonStyle(.glassProminent)
-                    .tint(.pink)
-                Button("plainButton") { }
-                    .buttonStyle(.plain)
-                    .tint(.pink)
+                VStack {
+                    Button("button") { }
+                        .tint(.pink)
+                    Button("borderedButton") { }
+                        .buttonStyle(.bordered)
+                        .tint(.pink)
+                    Button("borderedProminentButton") { }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.pink)
+                    Button("borderlessButton") { }
+                        .buttonStyle(.borderless)
+                        .tint(.pink)
+                    Button("glassButton") { }
+                        .buttonStyle(.glass)
+                        .tint(.pink)
+                    Button("glassProminentButton") { }
+                        .buttonStyle(.glassProminent)
+                        .tint(.pink)
+                    Button("plainButton") { }
+                        .buttonStyle(.plain)
+                        .tint(.pink)
+                }
+                .frame(maxWidth: .infinity)
             }
         }
     }

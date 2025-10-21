@@ -43,6 +43,12 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
+                    ColorPickerDemoView()
+                } label: {
+                    Label("Color Picker", systemImage: "paintpalette")
+                }
+                
+                NavigationLink {
                     DatePickerDemoView()
                 } label: {
                     Label(.init("datePicker"), systemImage: "calendar")

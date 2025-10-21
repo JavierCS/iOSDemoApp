@@ -46,6 +46,7 @@
 			membershipExceptions = (
 				"Firebase/GoogleService-Info.plist",
 				Localizable.xcstrings,
+				Modules/SwiftUI/UIElements/ColorPicker/ColorPickerDemoView.swift,
 				Modules/SwiftUI/UIElements/Divider/DividerDemoView.swift,
 				Modules/SwiftUI/UIElements/Form/FormDemoView.swift,
 				Modules/SwiftUI/UIElements/Grid/SFSymbolIcon.swift,
@@ -74,6 +75,7 @@
 			membershipExceptions = (
 				"Firebase/GoogleService-Info.plist",
 				Localizable.xcstrings,
+				Modules/SwiftUI/UIElements/ColorPicker/ColorPickerDemoView.swift,
 				Modules/SwiftUI/UIElements/Divider/DividerDemoView.swift,
 				Modules/SwiftUI/UIElements/Form/FormDemoView.swift,
 				Modules/SwiftUI/UIElements/Grid/SFSymbolIcon.swift,
