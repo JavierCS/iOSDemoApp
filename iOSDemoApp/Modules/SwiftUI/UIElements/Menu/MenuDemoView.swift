@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuDemoView: View {
+    @State private var showForm: Bool = false
     
     var complexMenu: some View {
         Menu("actions") {
@@ -22,7 +23,7 @@ struct MenuDemoView: View {
         }
     }
     
-    var body: some View {
+    var list: some View {
         List {
             Section(.init("initialization")) {
                 complexMenu
@@ -85,6 +86,15 @@ struct MenuDemoView: View {
                 .menuStyle(CapsuleMenuStyle())
             }
         }
+    }
+    
+    var body: some View {
+        VStack {
+            list
+            Button("Show Form") {
+                showForm.toggle()
+            }
+        }
         .navigationTitle(.init("menu"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -95,20 +105,20 @@ struct MenuDemoView: View {
                 complexMenu
             }
         }
-//        .sheet(isPresented: .constant(true)) {
-//            Form {
-//                Menu("actions") {
-//                    Button(.init("duplicate"), action: {})
-//                    Button(.init("rename"), action: {})
-//                    Button(.init("delete"), action: {})
-//                    Menu(.init("copy")) {
-//                        Button(.init("copy"), action: {})
-//                        Button(.init("copyFormatted"), action: {})
-//                        Button(.init("copyLibraryPath"), action: {})
-//                    }
-//                }
-//            }
-//        }
+        .sheet(isPresented: $showForm) {
+            Form {
+                Menu("actions") {
+                    Button(.init("duplicate"), action: {})
+                    Button(.init("rename"), action: {})
+                    Button(.init("delete"), action: {})
+                    Menu(.init("copy")) {
+                        Button(.init("copy"), action: {})
+                        Button(.init("copyFormatted"), action: {})
+                        Button(.init("copyLibraryPath"), action: {})
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -118,19 +128,3 @@ struct MenuDemoView: View {
     }
 }
 
-struct CapsuleMenuStyle: MenuStyle {
-    var fill: Color = .blue.opacity(0.12)
-    var border: Color = .secondary.opacity(0.25)
-    var paddingV: CGFloat = 10
-    var paddingH: CGFloat = 14
-
-    func makeBody(configuration: Configuration) -> some View {
-        Menu(configuration)                // 🔑 mantiene el contenido del menú
-            .menuIndicator(.hidden)        // ocultar chevron nativo si quieres
-            .buttonStyle(.plain)           // evita estilos de botón heredados
-            .padding(.vertical, paddingV)
-            .padding(.horizontal, paddingH)
-            .background(fill, in: Capsule())
-            .overlay(Capsule().stroke(border))
-    }
-}

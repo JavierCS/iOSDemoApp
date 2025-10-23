@@ -8,13 +8,9 @@
 import SwiftUI
 
 enum NotifyMeAboutType: String, CaseIterable {
-    case directMessages
-    case mentions
-    case anything
-    
-    func localizedText() -> String {
-        NSLocalizedString(rawValue, comment: .empty)
-    }
+    case directMessages = "Direct Message"
+    case mentions = "Mentions"
+    case anything = "Anything"
 }
 
 enum ProfileImageSize: String, CaseIterable {
@@ -35,27 +31,27 @@ struct FormDemoView: View {
     
     var body: some View {
         Form {
-            Section(.init("notifications")) {
-                Picker(.init("notifyMeAbout"), selection: $notifyMeAbout) {
+            Section("Notifications") {
+                Picker("Notify me about", selection: $notifyMeAbout) {
                     ForEach(NotifyMeAboutType.allCases, id: \.self) { caseType in
-                        Text(caseType.localizedText()).tag(caseType)
+                        Text(caseType.rawValue).tag(caseType)
                     }
                 }
-                Toggle(.init("playNotificationSounds"), isOn: $playNotificationSounds)
-                Toggle(.init("sendReadReceipts"), isOn: $sendRedReceipts)
+                Toggle("Play notification sounds", isOn: $playNotificationSounds)
+                Toggle("Send read receipts", isOn: $sendRedReceipts)
             }
             
-            Section(.init("userProfiles")) {
-                Picker(.init("profileImageSize"), selection: $profileImageSize) {
+            Section("User Profiles") {
+                Picker("Profile image size", selection: $profileImageSize) {
                     ForEach(ProfileImageSize.allCases, id: \.self) { imageSize in
                         Text(imageSize.localizedText()).tag(imageSize)
                     }
                 }
-                Button(.init("clearImageCache")) {}
+                Button("Clear image cache") {}
             }
         }
 //        .formStyle(.columns) this is for macOS
-        .navigationTitle(.init("form"))
+        .navigationTitle("Form")
     }
 }
 

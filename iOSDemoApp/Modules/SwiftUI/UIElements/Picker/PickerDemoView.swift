@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-enum PickerItem: String, CaseIterable {
+enum PickerItem: String, CaseIterable, Identifiable {
     case itemOne = "Item One"
     case itemTwo = "Item Two"
     case itemThree = "Item Three"
+    
+    var id: Self { self }
 }
 
 struct PickerDemoView: View {

@@ -11,14 +11,14 @@ struct DividerDemoView: View {
     var body: some View {
         List {
             VStack(alignment: .leading) {
-                Text(.init("textOne"))
+                Text("Text One")
                 Divider()
                 
-                Text(.init("textTwo"))
+                Text("Text Two")
                     .frame(maxWidth: .infinity)
                 Divider()
                 
-                Text(.init("textThree"))
+                Text("Text Three")
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 Divider()
                     .padding(.bottom)
@@ -37,7 +37,7 @@ struct DividerDemoView: View {
                 }
             }
         }
-        .navigationTitle(.init("divider"))
+        .navigationTitle("Divider")
     }
 }
 

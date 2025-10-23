@@ -10,12 +10,12 @@ import SwiftUI
 struct ButtonDemoView: View {
     var body: some View {
         buttonDemo
-            .navigationTitle(Text(.init("button")))
+            .navigationTitle("Button")
     }
     
     var buttonDemo: some View {
         List {
-            Section(.init("initialization")) {
+            Section("Initialization") {
                 VStack {
                     Button("Button") { }
                     .buttonStyle(.glassProminent)
@@ -35,43 +35,43 @@ struct ButtonDemoView: View {
             
             Section("style") {
                 VStack {
-                    Button("button") { }
-                    Button("borderedButton") { }
+                    Button("Button") { }
+                    Button("Bordered Button") { }
                         .buttonStyle(.bordered)
-                    Button("borderedProminentButton") { }
+                    Button("Bordered Prominent Button") { }
                         .buttonStyle(.borderedProminent)
-                    Button("borderlessButton") { }
+                    Button("Borderless Button") { }
                         .buttonStyle(.borderless)
-                    Button("glassButton") { }
+                    Button("Glass Button") { }
                         .buttonStyle(.glass)
-                    Button("glassProminentButton") { }
+                    Button("Glass Prominent Button") { }
                         .buttonStyle(.glassProminent)
-                    Button("plainButton") { }
+                    Button("Plain Button") { }
                         .buttonStyle(.plain)
                 }
                 .frame(maxWidth: .infinity)
             }
             
-            Section("tint") {
+            Section("Tint") {
                 VStack {
-                    Button("button") { }
+                    Button("Button") { }
                         .tint(.pink)
-                    Button("borderedButton") { }
+                    Button("Bordered Button") { }
                         .buttonStyle(.bordered)
                         .tint(.pink)
-                    Button("borderedProminentButton") { }
+                    Button("Bordered Prominent Button") { }
                         .buttonStyle(.borderedProminent)
                         .tint(.pink)
-                    Button("borderlessButton") { }
+                    Button("Borderless Button") { }
                         .buttonStyle(.borderless)
                         .tint(.pink)
-                    Button("glassButton") { }
+                    Button("Glass Button") { }
                         .buttonStyle(.glass)
                         .tint(.pink)
-                    Button("glassProminentButton") { }
+                    Button("Glass Prominent Button") { }
                         .buttonStyle(.glassProminent)
                         .tint(.pink)
-                    Button("plainButton") { }
+                    Button("Plain Button") { }
                         .buttonStyle(.plain)
                         .tint(.pink)
                 }
@@ -88,32 +88,4 @@ struct ButtonDemoView: View {
 }
 
 
-struct CustomButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .frame(maxWidth: .infinity)
-            .foregroundStyle(colorFromConfiguration(configuration))
-            .padding()
-            .background(.background)
-            .overlay {
-                Capsule()
-                    .stroke(colorFromConfiguration(configuration), lineWidth: 2)
-            }
-            .opacity(configuration.isPressed ? 0.6 : 1.0)
-    }
-    
-    func colorFromConfiguration(_ configuration: Configuration) -> Color {
-        configuration.role == .destructive ? Color(.systemRed) : Color.accentColor
-    }
-}
 
-#Preview("Custom Button Style") {
-    VStack {
-        Button("Aceptar") {
-            print("Tocado")
-        }
-        .buttonStyle(CustomButtonStyle())
-        .padding(.horizontal)
-        Spacer()
-    }
-}

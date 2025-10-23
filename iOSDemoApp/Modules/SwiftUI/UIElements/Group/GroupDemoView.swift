@@ -16,10 +16,10 @@ struct GroupDemoView: View {
     
     var body: some View {
         List {
-            Section(.init("multiViewsModifiers")) {
+            Section("Multi Views Modifiers") {
                 Group {
-                    Text(.init("title"))
-                    Text(.init("subTitle"))
+                    Text("Title")
+                    Text("Sub Title")
                 }
                 .font(.headline)
                 .foregroundStyle(.blue)
@@ -28,43 +28,43 @@ struct GroupDemoView: View {
             Section {
                 conditionalContent
             } header: {
-                Text(.init("bodyConditionals"))
+                Text("Body Conditionals")
             } footer: {
                 Toggle(isOn: $isLoggedIn) {
-                    Label(.init("isLoggedIn"), systemImage: "apple.logo")
+                    Label("Is logged in", systemImage: "apple.logo")
                 }
             }
             
-            Section(.init("logicSeparation")) {
+            Section("Logic Separation") {
                 VStack {
                     Group {
-                        Text(.init("personalData"))
-                        TextField(.init("name"), text: $name)
-                        TextField(.init("email"), text: $email)
+                        Text("Personal Data")
+                        TextField("Name", text: $name)
+                        TextField("Email", text: $email)
                     }
                     
                     Divider()
                     
                     Group {
-                        Text(.init("configuration"))
-                        Toggle(.init("darkMode"), isOn: $darkMode)
-                        Toggle(.init("notifications"), isOn: $notifications)
+                        Text("Configuration")
+                        Toggle("Dark Mode", isOn: $darkMode)
+                        Toggle("Notifications", isOn: $notifications)
                     }
                 }
             }
 
-        }.navigationTitle(.init("group"))
+        }.navigationTitle("Group")
     }
     
     var conditionalContent: some View {
         if isLoggedIn {
             Group {
-                Text(.init("isLoggedIn"))
+                Text("Is logged in")
                 Text(Date(), format: .dateTime)
             }
         } else {
             Group {
-                Text(.init("isNotLoggedIn"))
+                Text("Is not logged in")
                 Text(Date(), format: .dateTime)
             }
         }

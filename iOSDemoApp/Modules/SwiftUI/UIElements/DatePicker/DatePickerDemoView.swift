@@ -18,59 +18,59 @@ struct DatePickerDemoView: View {
     
     var body: some View {
         list
-            .navigationTitle(Text(.init("datePicker")))
+            .navigationTitle("Date Picker")
     }
     
     var list: some View {
         List {
             Section {
                 DatePicker(selection: $date) {
-                    Text(.init("startDate"))
-                    Text(.init("selectTheStartingDate"))
+                    Text("Start Date")
+                    Text("Select the starting date")
                 }
             }
             
-            Section(.init("closedRange")) {
-                DatePicker(.init("startDate"), selection: $date, in: dateRange, displayedComponents: [.date, .hourAndMinute])
+            Section("Closed Range") {
+                DatePicker("Start date", selection: $date, in: dateRange, displayedComponents: [.date, .hourAndMinute])
             }
             
-            Section(.init("style")) {
-                DatePicker(.init("compactDatePickerStyle"), selection: $date)
+            Section("Style") {
+                DatePicker("Compact Date Picker Style", selection: $date)
                     .datePickerStyle(.compact)
                 
-                DatePicker(.init("graphicalDatePickerStyle"), selection: $date)
+                DatePicker("Graphical Date Picker Style", selection: $date)
                     .datePickerStyle(.graphical)
                 
-                DatePicker(.init("wheelDatePickerStyle"), selection: $date)
+                DatePicker("Wheel Date Picker Style", selection: $date)
                     .datePickerStyle(.wheel)
             }
             
-            Section(.init("tint")) {
-                DatePicker(.init("compactDatePickerStyle"), selection: $date)
+            Section("Tint") {
+                DatePicker("Compact Date Picker Style", selection: $date)
                     .datePickerStyle(.compact)
                 
-                DatePicker(.init("graphicalDatePickerStyle"), selection: $date)
+                DatePicker("Graphical Date Picker Style", selection: $date)
                     .datePickerStyle(.graphical)
                 
-                DatePicker(.init("wheelDatePickerStyle"), selection: $date)
+                DatePicker("Wheel Date Picker Style", selection: $date)
                     .datePickerStyle(.wheel)
             }
             .tint(.pink)
             
-            Section(.init("displayedComponents")) {
-                DatePicker(.init("defaultHourAndMinuteDisplayedComponent"), selection: $date, displayedComponents: [.hourAndMinute])
+            Section("Displayed Components") {
+                DatePicker("Default Hour And Minute Displayed Component", selection: $date, displayedComponents: [.hourAndMinute])
                     .datePickerStyle(.compact)
                 
-                DatePicker(.init("wheelHourAndMinuteDisplayedComponent"), selection: $date, displayedComponents: [.hourAndMinute])
+                DatePicker("Wheel Hour And Minute Displayed Component", selection: $date, displayedComponents: [.hourAndMinute])
                     .datePickerStyle(.wheel)
                 
-                DatePicker(.init("compactDateDisplayedComponent"), selection: $date, displayedComponents: [.date])
+                DatePicker("Compact Date Displayed Component", selection: $date, displayedComponents: [.date])
                     .datePickerStyle(.compact)
                 
-                DatePicker(.init("graphicalDateDisplayedComponent"), selection: $date, displayedComponents: [.date])
+                DatePicker("Graphical Date Displayed Component", selection: $date, displayedComponents: [.date])
                     .datePickerStyle(.graphical)
                 
-                DatePicker(.init("wheelDateDisplayedComponent"), selection: $date, displayedComponents: [.date])
+                DatePicker("Wheel Date Displayed Component", selection: $date, displayedComponents: [.date])
                     .datePickerStyle(.wheel)
             }
         }

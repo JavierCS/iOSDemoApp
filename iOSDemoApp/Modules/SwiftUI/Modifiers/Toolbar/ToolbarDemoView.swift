@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ToolbarDemoView: View {
+    @State private var pickerItem: PickerItem = .itemOne
+    
     var body: some View {
         toolbarDemo
-            .navigationTitle(Text(.init("toolbar")))
+            .navigationTitle("Toolbar")
             .toolbar {
                 ToolbarItemGroup(placement: .primaryAction) {
                     Button { } label: { Image(systemName: "chevron.up") }
@@ -20,7 +22,15 @@ struct ToolbarDemoView: View {
                 ToolbarSpacer(.fixed, placement: .primaryAction)
                 
                 ToolbarItem(placement: .primaryAction) {
-                    Button { } label: { Image(systemName: "ellipsis") }
+                    Menu {
+                        Picker(String.empty, selection: $pickerItem) {
+                            ForEach(PickerItem.allCases) { item in
+                                Text(item.rawValue).tag(item)
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis")
+                    }
                 }
                 
                 ToolbarSpacer(.flexible, placement: .bottomBar)

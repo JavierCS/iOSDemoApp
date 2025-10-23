@@ -30,7 +30,7 @@ struct GridDemoView: View {
                 }
             }
             .background(Color(.systemGroupedBackground).ignoresSafeArea())
-            .navigationTitle(.init("grid"))
+            .navigationTitle("Grid")
             .onAppear {
                 Task {
                     await loadSFSymbols()
