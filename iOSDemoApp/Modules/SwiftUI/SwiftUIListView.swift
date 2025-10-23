@@ -237,6 +237,12 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
+                    SymbolEffectDemoView()
+                } label: {
+                    Label("Symbol Effect", systemImage: "xmark.triangle.circle.square")
+                }
+                
+                NavigationLink {
                     ToolbarDemoView()
                 } label: {
                     Label("Tool Bar", systemImage: "platter.filled.top.iphone")
