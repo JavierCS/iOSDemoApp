@@ -8,30 +8,30 @@
 import UIKit
 
 enum UIKitComponent: String, CaseIterable, NavigationItem {
-    case uiActivityIndicator
-    case uiButton
-    case uiDatePicker
-    case uiImageView
-    case uiLabel
-    case uiPageControl
-    case uiPickerView
-    case uiProgressView
-    case uiSegmentedControl
-    case uiSlider
-    case uiStepper
-    case uiSwitch
-    case uiTextField
-    case uiTextView
+    case uiActivityIndicator = "UIActivityIndicator"
+    case uiButton = "UIButton"
+    case uiDatePicker = "UIDatePicker"
+    case uiImageView = "UIImageView"
+    case uiLabel = "UILabel"
+    case uiPageControl = "UIPageControl"
+    case uiPickerView = "UIPickerView"
+    case uiProgressView = "UIProgressView"
+    case uiSegmentedControl = "UISegmentedControl"
+    case uiSlider = "UISlider"
+    case uiStepper = "UIStepper"
+    case uiSwitch = "UISwitch"
+    case uiTextField = "UITextField"
+    case uiTextView = "UITextView"
     
-    case uiTabBarController
-    case uiTableViewController
-    case uiCollectionViewController
-    case uiPageViewController
+    case uiTabBarController = "UITabBarController"
+    case uiTableViewController = "UITableViewController"
+    case uiCollectionViewController = "UICollectionViewController"
+    case uiPageViewController = "UIPageViewController"
     
-    case uiContentConfiguration
+    case uiContentConfiguration = "UIContentConfiguration"
     
     func title() -> String {
-        NSLocalizedString(rawValue, comment: .empty)
+        rawValue
     }
     
     func image() -> UIImage? {
@@ -137,7 +137,7 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
     }
     
     static func listController() -> NavigationItemsList {
-        let listTitle = NSLocalizedString("uikit", comment: .empty)
+        let listTitle = "UIKit"
         let listController = NavigationItemsList(
             title: listTitle,
             dataSource: [

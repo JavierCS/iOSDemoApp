@@ -8,10 +8,10 @@
 import UIKit
 
 enum VisionKitComponent: String, CaseIterable, NavigationItem {
-    case vnDocumentCameraViewController
+    case vnDocumentCameraViewController = "VNDocumentCameraViewController"
     
     func title() -> String {
-        NSLocalizedString(rawValue, comment: .empty)
+        rawValue
     }
     
     func image() -> UIImage? {
@@ -33,7 +33,7 @@ enum VisionKitComponent: String, CaseIterable, NavigationItem {
     }
     
     static func listController() -> NavigationItemsList {
-        let listTitle = NSLocalizedString("visionKit", comment: .empty)
+        let listTitle = "VisionKit"
         let listController = NavigationItemsList(
             title: listTitle,
             dataSource: [

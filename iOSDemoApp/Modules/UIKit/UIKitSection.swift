@@ -8,11 +8,11 @@
 import Foundation
 
 enum UIKitSection: String, CaseIterable {
-    case uiElements
-    case uiViewControllers
-    case protocols
+    case uiElements = "UI Elements"
+    case uiViewControllers = "UI ViewControllers"
+    case protocols = "Protocols"
     
     func title() -> String {
-        NSLocalizedString(rawValue, comment: .empty)
+        rawValue
     }
 }

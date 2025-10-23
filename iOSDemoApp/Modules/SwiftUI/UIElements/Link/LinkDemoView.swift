@@ -12,15 +12,15 @@ struct LinkDemoView: View {
     
     var body: some View {
         List {
-            Section(.init("initialization")) {
-                Link(.init("linkReference"), destination: linkUrl)
+            Section("Initialization") {
+                Link("Link Reference", destination: linkUrl)
                 
                 Link(destination: linkUrl) {
-                    Label(.init("appleDeveloperDocumentation"), systemImage: "link")
+                    Label("Apple Developer Documentation", systemImage: "link")
                 }
             }
         }
-        .navigationTitle(.init("link"))
+        .navigationTitle("Link")
     }
 }
 

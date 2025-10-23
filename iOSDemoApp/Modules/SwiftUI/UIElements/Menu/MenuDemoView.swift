@@ -11,58 +11,58 @@ struct MenuDemoView: View {
     @State private var showForm: Bool = false
     
     var complexMenu: some View {
-        Menu("actions") {
-            Button(.init("duplicate"), action: {})
-            Button(.init("rename"), action: {})
-            Button(.init("delete"), action: {})
-            Menu(.init("copy")) {
-                Button(.init("copy"), action: {})
-                Button(.init("copyFormatted"), action: {})
-                Button(.init("copyLibraryPath"), action: {})
+        Menu("Actions") {
+            Button("Duplicate", action: {})
+            Button("Rename", action: {})
+            Button("Delete", action: {})
+            Menu("Copy") {
+                Button("Copy", action: {})
+                Button("Copy Formatted", action: {})
+                Button("Copy Library Path", action: {})
             }
         }
     }
     
     var list: some View {
         List {
-            Section(.init("initialization")) {
+            Section("Initialization") {
                 complexMenu
                 
                 Menu {
-                    Button(.init("openInPreview"), action: {})
-                    Button(.init("saveAsPdf"), action: {})
+                    Button("Open in preview", action: {})
+                    Button("Save as pdf", action: {})
                 } label: {
-                    Label(.init("pdf"), systemImage: "doc")
+                    Label("PDF", systemImage: "doc")
                 }
                 
                 Menu {
                     Button(action: {}) {
                         // The subtitle behavior does not apply to buttons outside of a menu's content.
-                        Text(.init("openInPreview"))
-                        Text(.init("openInPreviewDescription"))
+                        Text("Open in preview")
+                        Text("openInPreviewDescription")
                     }
                     Button(action: {}) {
-                        Text(.init("saveAsPdf"))
-                        Text(.init("saveAsPdfDescription"))
+                        Text("Save as pdf")
+                        Text("Save as pdf description")
                     }
                 } label: {
-                    Label(.init("pdf"), systemImage: "doc")
+                    Label("PDF", systemImage: "doc")
                 }
             }
             
-            Section(.init("primaryAction")) {
+            Section("Primary Action") {
                 Menu {
                     Button(action: {}) {
-                        Label(.init("addToReadingList"), systemImage: "eyeglasses")
+                        Label("Add to reading list", systemImage: "eyeglasses")
                     }
                     Button(action: {}) {
-                        Label(.init("addBookmarksForAllTabs"), systemImage: "book")
+                        Label("Add bookmarks for all tabs", systemImage: "book")
                     }
                     Button(action: {}) {
-                        Label(.init("showAllBookmarks"), systemImage: "books.vertical")
+                        Label("Show all bookmarks", systemImage: "books.vertical")
                     }
                 } label: {
-                    Label(.init("tapOrPressAndHold"), systemImage: "book")
+                    Label("Tap or press and hold", systemImage: "book")
                 } primaryAction: {
                     print("primaryAction")
                 }
@@ -70,18 +70,18 @@ struct MenuDemoView: View {
                 Button {
                     
                 } label: {
-                    Label(.init("appleDeveloperDocumentation"), systemImage: "apple.logo")
+                    Label("Apple Developer Documentation", systemImage: "apple.logo")
                 }
                 .contextMenu {
                     complexMenu
                 }
             }
             
-            Section(.init("customStyles")) {
-                Menu(.init("editing")) {
-                    Button(.init("setInPoint"), action: {})
+            Section("Custom Styles") {
+                Menu("Editing") {
+                    Button("Set in point", action: {})
                     Divider()
-                    Button(.init("setOutPonint"), action: {})
+                    Button("Set out ponint", action: {})
                 }
                 .menuStyle(CapsuleMenuStyle())
             }
@@ -95,7 +95,7 @@ struct MenuDemoView: View {
                 showForm.toggle()
             }
         }
-        .navigationTitle(.init("menu"))
+        .navigationTitle("Menu")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 complexMenu
@@ -107,14 +107,14 @@ struct MenuDemoView: View {
         }
         .sheet(isPresented: $showForm) {
             Form {
-                Menu("actions") {
-                    Button(.init("duplicate"), action: {})
-                    Button(.init("rename"), action: {})
-                    Button(.init("delete"), action: {})
-                    Menu(.init("copy")) {
-                        Button(.init("copy"), action: {})
-                        Button(.init("copyFormatted"), action: {})
-                        Button(.init("copyLibraryPath"), action: {})
+                Menu("Actions") {
+                    Button("Duplicate", action: {})
+                    Button("Rename", action: {})
+                    Button("Delete", action: {})
+                    Menu("Copy") {
+                        Button("Copy", action: {})
+                        Button("Copy formatted", action: {})
+                        Button("Copy library path", action: {})
                     }
                 }
             }
@@ -127,4 +127,3 @@ struct MenuDemoView: View {
         MenuDemoView()
     }
 }
-

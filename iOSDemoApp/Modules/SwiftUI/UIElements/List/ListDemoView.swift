@@ -10,7 +10,7 @@ import SwiftUI
 struct ListDemoView: View {
     var body: some View {
         ItemsList()
-            .navigationTitle(Text(.init("list")))
+            .navigationTitle("List")
     }
 }
 

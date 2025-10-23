@@ -10,85 +10,85 @@ import SwiftUI
 struct LabelDemoView: View {
     var body: some View {
         List {
-            Section(.init("initialization")) {
+            Section("Initialization") {
                 getLabel()
                 getComposedLabel()
             }
             
-            Section(.init("modifiers")) {
+            Section("Modifiers") {
                 VStack {
-                    Text(.init("labelIconToTitleSpacing"))
+                    Text("Label Icon To Title Spacing")
                     getLabel()
                         .labelIconToTitleSpacing(40)
                 }
                 .frame(maxWidth: .infinity)
             }
             
-            Section(.init("styles")) {
+            Section("Styles") {
                 VStack {
-                    Text(.init("iconOnly"))
+                    Text("Icon Only")
                     getLabel()
                         .labelStyle(.iconOnly)
                     
                     Divider()
                         .padding(.vertical)
                     
-                    Text(.init("titleOnly"))
+                    Text("Title Only")
                     getLabel()
                         .labelStyle(.titleOnly)
                     
                     Divider()
                         .padding(.vertical)
                     
-                    Text(.init("titleAndIcon"))
+                    Text("Title And Icon")
                     getLabel()
                         .labelStyle(.titleAndIcon)
                 }
                 .frame(maxWidth: .infinity, )
             }
             
-            Section(.init("customStyles")) {
+            Section("Custom Styles") {
                 VStack {
-                    Text(.init("leadingIconStyle"))
+                    Text("Leading Icon Style")
                     getLabel()
                         .labelStyle(LeadingIconLabelStyle())
                     
                     Divider()
                     
-                    Text(.init("topIconStyle"))
+                    Text("Top Icon Style")
                     getLabel()
                         .labelStyle(TopIconLabelStyle())
                     
                     Divider()
                     
-                    Text(.init("bottomIconStyle"))
+                    Text("Bottom Icon Style")
                     getLabel()
                         .labelStyle(BottomIconLabelStyle())
                     
                     Divider()
                     
-                    Text(.init("redBorderedLabelStyle"))
+                    Text("Red Bordered Label Style")
                     getLabel()
                         .labelStyle(RedBorderedLabelStyle())
                 }
                 .frame(maxWidth: .infinity)
             }
         }
-        .navigationTitle(.init("label"))
+        .navigationTitle("Label")
     }
     
     @ViewBuilder
     private func getLabel() -> some View {
-        Label(.init("label"), systemImage: "swift")
+        Label("Label", systemImage: "swift")
     }
     
     @ViewBuilder
     private func getComposedLabel() -> some View {
         Label {
-            Text(.init("body"))
+            Text("Body")
                 .font(.body)
                 .foregroundStyle(.primary)
-            Text(.init("subheadline"))
+            Text("Subheadline")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         } icon: {
@@ -96,7 +96,7 @@ struct LabelDemoView: View {
                 .fill(Color.accentColor)
                 .frame(width: 44, height: 44, alignment: .center)
                 .overlay {
-                    Text(.init("body.initial"))
+                    Text("B")
                         .foregroundStyle(.white)
                 }
         }

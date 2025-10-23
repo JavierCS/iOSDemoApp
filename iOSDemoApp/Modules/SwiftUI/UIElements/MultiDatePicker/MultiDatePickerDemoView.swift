@@ -12,7 +12,7 @@ struct MultiDatePickerDemoView: View {
     
     var body: some View {
         VStack {
-            MultiDatePicker(.init("selectSomeDates"), selection: $selected)
+            MultiDatePicker("Select some dates", selection: $selected)
         }
     }
 }

@@ -24,6 +24,6 @@ struct TopIconLabelStyle: LabelStyle {
 }
 
 #Preview {
-    Label(.init("label"), systemImage: "swift")
+    Label("Label", systemImage: "swift")
         .labelStyle(TopIconLabelStyle())
 }

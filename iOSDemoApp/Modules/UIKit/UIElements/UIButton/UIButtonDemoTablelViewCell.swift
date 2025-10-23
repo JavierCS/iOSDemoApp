@@ -37,7 +37,7 @@ final class UIButtonDemoTablelViewCell: UITableViewCell {
     // MARK: - Drawing
     func draw(_ model: UIButtonDemoModel) {
         let buttonStyle = model.style
-        button.setTitle(buttonStyle.name(), for: .normal)
+        button.setTitle(buttonStyle.rawValue, for: .normal)
         button.configuration = buttonStyle.configuration()
         button.tintColor = model.tintColor ?? .systemBlue
     }

@@ -14,7 +14,7 @@ struct NavigationSplitViewDemoView: View {
     
     var body: some View {
         navigationSplitView
-            .navigationTitle("navigationSplitView")
+            .navigationTitle("Navigation Split View")
     }
     
     var navigationSplitView: some View {
@@ -31,14 +31,14 @@ struct NavigationSplitViewDemoView: View {
                 ContentUnavailableView(
                     "selectAnItem",
                     systemImage: "folder",
-                    description: Text(.init("chooseOneFromTheSidebar"))
+                    description: Text("Choose one from the sidebar")
                 )
             }
         }
         .searchable(
             text: $query,
             placement: .automatic,
-            prompt: Text(.init("whatAreYouLookingFor"))
+            prompt: Text("What are you looking for?")
         )
     }
 }

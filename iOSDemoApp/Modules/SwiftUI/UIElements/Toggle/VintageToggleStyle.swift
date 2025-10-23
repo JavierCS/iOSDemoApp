@@ -46,6 +46,6 @@ struct VintageToggleStyle: ToggleStyle {
 
 #Preview("CustomStyle") {
     @Previewable @State var isOn: Bool = false
-    Toggle(.init("customStyle"), isOn: $isOn)
+    Toggle("Custom Style", isOn: $isOn)
         .toggleStyle(VintageToggleStyle())
 }

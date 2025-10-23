@@ -15,22 +15,22 @@ enum DemoProgressViewStyle {
 struct ProgressViewDemoView: View {
     var body: some View {
         list
-            .navigationTitle(Text(.init("progressView")))
+            .navigationTitle("Progress View")
     }
     
     var list: some View {
         List {
-            Section(.init("style")) {
+            Section("Style") {
                 progressView()
                 progressView(style: .linear(value: 50, total: 100))
             }
             
-            Section(.init("customStyle")) {
+            Section("Custom Style") {
                 progressView(style: .linear(value: 50, total: 100))
                     .progressViewStyle(CustomProgressViewStyle())
             }
             
-            Section(.init("tint")) {
+            Section("Tint") {
                 progressView()
                 progressView(style: .linear(value: 50, total: 100))
             }.tint(.pink)

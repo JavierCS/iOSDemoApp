@@ -40,7 +40,7 @@ struct StepperDemoView: View {
     
     var body: some View {
         List {
-            Section(.init("default")) {
+            Section("Initialization") {
                 Stepper(value: $value, in: 0...10) {
                     Label("\(value)", systemImage: "shoeprints.fill")
                 }
@@ -52,14 +52,14 @@ struct StepperDemoView: View {
                 }
             }
             
-            Section(.init("dissabled")) {
+            Section("Dissabled") {
                 Stepper(value: $valueTwo, in: 0...10) {
                     Label("\(valueTwo)", systemImage: "shoeprints.fill")
                 }
                 .disabled(true)
             }
             
-            Section(.init("tintedWithChangeBehavior")) {
+            Section("Tinted With Change Behavior") {
                 Stepper {
                     Label("Value: \(valueFour) Color: \(colors[valueFour].description)", systemImage: "shoeprints.fill")
                 } onIncrement: {
@@ -70,13 +70,13 @@ struct StepperDemoView: View {
                 .foregroundStyle(colors[valueFour])
             }
             
-            Section(.init("customStep")) {
+            Section("Custom Step") {
                 Stepper(value: $valueFive, in: range, step: step) {
                     Label("\(valueFive) in \(range.description) stepping by \(step)", systemImage: "shoeprints.fill")
                 }
             }
         }
-        .navigationTitle(Text(.init("stepper")))
+        .navigationTitle("Stepper")
     }
 }
 

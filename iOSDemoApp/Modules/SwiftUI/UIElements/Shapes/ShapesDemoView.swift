@@ -10,12 +10,12 @@ import SwiftUI
 struct ShapesDemoView: View {
     var body: some View {
         List {
-            Section(.init("basicGeometryForms")) {
+            Section("Basic Geometry Forms") {
                 Rectangle()
                     .frame(height: 100)
                     .foregroundStyle(.red)
                     .overlay {
-                        Text(.init("rectangle"))
+                        Text("Rectangle")
                             .foregroundStyle(.white)
                     }
                 
@@ -23,14 +23,14 @@ struct ShapesDemoView: View {
                     .frame(height: 100)
                     .foregroundStyle(.green)
                     .overlay {
-                        Text(.init("roundedRectangle"))
+                        Text("Rounded Rectangle")
                             .foregroundStyle(.white)
                     }
                 
                 Circle()
                     .foregroundStyle(.blue)
                     .overlay {
-                        Text(.init("circle"))
+                        Text("Circle")
                             .foregroundStyle(.white)
                     }
                 
@@ -38,7 +38,7 @@ struct ShapesDemoView: View {
                     .frame(height: 100)
                     .foregroundStyle(.yellow)
                     .overlay {
-                        Text(.init("ellipse"))
+                        Text("Ellipse")
                             .foregroundStyle(.white)
                     }
                 
@@ -46,7 +46,7 @@ struct ShapesDemoView: View {
                     .frame(height: 100)
                     .foregroundStyle(.purple)
                     .overlay {
-                        Text(.init("capsule"))
+                        Text("Capsule")
                             .foregroundStyle(.white)
                     }
                 
@@ -54,12 +54,12 @@ struct ShapesDemoView: View {
                     .frame(height: 100)
                     .foregroundStyle(.cyan)
                     .overlay {
-                        Text(.init("unevenRoundedRectangle"))
+                        Text("Uneven Rounded Rectangle")
                             .foregroundStyle(.white)
                     }
             }
         }
-        .navigationTitle(.init("shapes"))
+        .navigationTitle("Shapes")
     }
 }
 

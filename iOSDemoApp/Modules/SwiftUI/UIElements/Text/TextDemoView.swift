@@ -10,60 +10,60 @@ import SwiftUI
 struct TextDemoView: View {
     var body: some View {
         list
-            .navigationTitle(Text(.init("text")))
+            .navigationTitle("Text")
     }
     
     var list: some View {
         List {
-            Section(.init("fonts")) {
-                Text(.init("largeTitle"))
+            Section("Fonts") {
+                Text("Large Title")
                     .font(.largeTitle)
-                Text(.init("title"))
+                Text("Title")
                     .font(.title)
-                Text(.init("title2"))
+                Text("Title2")
                     .font(.title2)
-                Text(.init("title3"))
+                Text("Title3")
                     .font(.title3)
-                Text(.init("headline"))
+                Text("Headline")
                     .font(.headline)
-                Text(.init("subheadline"))
+                Text("Subheadline")
                     .font(.subheadline)
-                Text(.init("body"))
+                Text("Body")
                     .font(.body)
-                Text(.init("callout"))
+                Text("Callout")
                     .font(.callout)
-                Text(.init("footnote"))
+                Text("Footnote")
                     .font(.footnote)
-                Text(.init("caption"))
+                Text("Caption")
                     .font(.caption)
-                Text(.init("caption2"))
+                Text("Caption 2")
                     .font(.caption2)
             }
             
-            Section(.init("fontWeight")) {
-                Text(.init("black")).fontWeight(.black)
-                Text(.init("black")).fontWeight(.heavy)
-                Text(.init("black")).fontWeight(.bold)
-                Text(.init("black")).fontWeight(.semibold)
-                Text(.init("black")).fontWeight(.medium)
-                Text(.init("black")).fontWeight(.regular)
-                Text(.init("black")).fontWeight(.light)
-                Text(.init("black")).fontWeight(.thin)
-                Text(.init("black")).fontWeight(.ultraLight)
+            Section("Font Weight") {
+                Text("Black").fontWeight(.black)
+                Text("Heavy").fontWeight(.heavy)
+                Text("Bold").fontWeight(.bold)
+                Text("Semibold").fontWeight(.semibold)
+                Text("Medium").fontWeight(.medium)
+                Text("Regular").fontWeight(.regular)
+                Text("Light").fontWeight(.light)
+                Text("Thin").fontWeight(.thin)
+                Text("Ultra Light").fontWeight(.ultraLight)
             }
             
-            Section(.init("fontWidth")) {
-                Text("Test").fontWidth(.compressed)
-                Text("Test").fontWidth(.condensed)
-                Text("Test").fontWidth(.standard)
-                Text("Test").fontWidth(.expanded)
+            Section("Font Width") {
+                Text("Compressed").fontWidth(.compressed)
+                Text("Condensed").fontWidth(.condensed)
+                Text("Standar").fontWidth(.standard)
+                Text("Expanded").fontWidth(.expanded)
             }
             
-            Section(.init("fontDesign")) {
-                Text("test").fontDesign(.default)
-                Text("test").fontDesign(.monospaced)
-                Text("test").fontDesign(.rounded)
-                Text("test").fontDesign(.serif)
+            Section("Font Design") {
+                Text("Default").fontDesign(.default)
+                Text("Monospaced").fontDesign(.monospaced)
+                Text("Rounded").fontDesign(.rounded)
+                Text("Serif").fontDesign(.serif)
             }
         }
     }

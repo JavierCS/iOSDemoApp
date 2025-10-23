@@ -31,7 +31,7 @@ struct ImageDemoView: View {
             Color(.systemGroupedBackground)
                 .ignoresSafeArea()
         }
-        .navigationTitle(.init("image"))
+        .navigationTitle("Image")
     }
 }
 

@@ -14,7 +14,7 @@ struct SwiftUIListView: View {
     
     var body: some View {
         itemsList
-            .navigationTitle(Text(.init("swiftui")))
+            .navigationTitle("SwiftUI")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(role: .cancel) {
@@ -35,11 +35,11 @@ struct SwiftUIListView: View {
     
     var itemsList: some View {
         List {
-            Section(.init("uiElements")) {
+            Section("UI Elements") {
                 NavigationLink {
                     ButtonDemoView()
                 } label: {
-                    Label(.init("button"), systemImage: "capsule")
+                    Label("Button", systemImage: "capsule")
                 }
                 
                 NavigationLink {
@@ -51,77 +51,77 @@ struct SwiftUIListView: View {
                 NavigationLink {
                     DatePickerDemoView()
                 } label: {
-                    Label(.init("datePicker"), systemImage: "calendar")
+                    Label("Date Picker", systemImage: "calendar")
                 }
                 
                 NavigationLink {
                     DividerDemoView()
                 } label: {
-                    Label(.init("divider"), systemImage: "square.grid.3x1.below.line.grid.1x2")
+                    Label("Divider", systemImage: "square.grid.3x1.below.line.grid.1x2")
                 }
                 
                 NavigationLink {
                     FormDemoView()
                 } label: {
-                    Label(.init("form"), systemImage: "rectangle.and.pencil.and.ellipsis")
+                    Label("Form", systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
                 
                 NavigationLink {
                     GridDemoView()
                 } label: {
-                    Label(.init("grid"), systemImage: "square.grid.3x3")
+                    Label("Grid", systemImage: "square.grid.3x3")
                 }
                 
                 NavigationLink {
                     GroupDemoView()
                 } label: {
-                    Label(.init("group"), systemImage: "rectangle.3.group")
+                    Label("Group", systemImage: "rectangle.3.group")
                 }
                 
                 NavigationLink {
                     GroupBoxDemoView()
                 } label: {
-                    Label(.init("groupBox"), systemImage: "text.rectangle")
+                    Label("Group Box", systemImage: "text.rectangle")
                 }
                 
                 NavigationLink {
                     ImageDemoView()
                 } label: {
-                    Label(.init("image"), systemImage: "photo")
+                    Label("Image", systemImage: "photo")
                 }
                 
                 NavigationLink {
                     LabelDemoView()
                 } label: {
-                    Label(.init("label"), systemImage: "richtext.page")
+                    Label("Label", systemImage: "richtext.page")
                 }
                 
                 NavigationLink {
                     LinkDemoView()
                 } label: {
-                    Label("link", systemImage: "link")
+                    Label("Link", systemImage: "link")
                 }
                 
                 NavigationLink {
                     ListDemoView()
                 } label: {
-                    Label(.init("list"), systemImage: "rectangle.grid.1x3")
+                    Label("List", systemImage: "rectangle.grid.1x3")
                 }
                 
                 NavigationLink {
                     MenuDemoView()
                 } label: {
-                    Label(.init("menu"), systemImage: "filemenu.and.selection")
+                    Label("Menu", systemImage: "filemenu.and.selection")
                 }
                 
                 NavigationLink {
                     MultiDatePickerDemoView()
                 } label: {
-                    Label(.init("multiDatePicker"), systemImage: "calendar")
+                    Label("Multi Date Picker", systemImage: "calendar")
                 }
                 
                 HStack {
-                    Label(.init("navigationSplitView"), systemImage: "sidebar.left")
+                    Label("Navigation Split View", systemImage: "sidebar.left")
                     Spacer()
                 }
                 .contentShape(Rectangle())
@@ -130,7 +130,7 @@ struct SwiftUIListView: View {
                 }
                 
                 HStack {
-                    Label(.init("navigationStack"), systemImage: "chevron.forward")
+                    Label("Navigation Stack", systemImage: "chevron.forward")
                     Spacer()
                 }
                 .contentShape(Rectangle())
@@ -141,105 +141,105 @@ struct SwiftUIListView: View {
                 NavigationLink {
                     PickerDemoView()
                 } label: {
-                    Label(.init("picker"), systemImage: "rectangle.split.3x1")
+                    Label("Picker", systemImage: "rectangle.split.3x1")
                 }
                 
                 NavigationLink {
                     ProgressViewDemoView()
                 } label: {
-                    Label(.init("progressView"), systemImage: "progress.indicator")
+                    Label("Progress View", systemImage: "progress.indicator")
                 }
                 
                 NavigationLink {
                     ScrollViewDemoView()
                 } label: {
-                    Label(.init("scrollView"), systemImage: "scroll")
+                    Label("Scroll View", systemImage: "scroll")
                 }
                 
                 NavigationLink {
                     ShapesDemoView()
                 } label: {
-                    Label(.init("shapes"), systemImage: "triangleshape")
+                    Label("Shapes", systemImage: "triangleshape")
                 }
                 
                 NavigationLink {
                     SliderDemoView()
                 } label: {
-                    Label(.init("slider"), systemImage: "slider.horizontal.3")
+                    Label("Slider", systemImage: "slider.horizontal.3")
                 }
                 
                 NavigationLink {
                     SpacerDemoView()
                 } label: {
-                    Label(.init("spacer"), systemImage: "space")
+                    Label("Spacer", systemImage: "space")
                 }
                 
                 NavigationLink {
                     StacksDemoView()
                 } label: {
-                    Label(.init("stackViews"), systemImage: "square.stack.3d.up")
+                    Label("Stack View", systemImage: "square.stack.3d.up")
                 }
                 
                 NavigationLink {
                     StepperDemoView()
                 } label: {
-                    Label(.init("stepper"), systemImage: "shoeprints.fill")
+                    Label("Stepper", systemImage: "shoeprints.fill")
                 }
                 
                 NavigationLink {
                     TabViewDemoView()
                 } label: {
-                    Label(.init("tabView"), systemImage: "platter.filled.bottom.iphone")
+                    Label("Tab View", systemImage: "platter.filled.bottom.iphone")
                 }
                 
                 NavigationLink {
                     TextDemoView()
                 } label: {
-                    Label(.init("text"), systemImage: "textformat")
+                    Label("Text", systemImage: "textformat")
                 }
                 
                 NavigationLink {
                     TextFieldDemoView()
                 } label: {
-                    Label(.init("textField"), systemImage: "rectangle.and.pencil.and.ellipsis")
+                    Label("Text Field", systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
                 
                 NavigationLink {
                     ToggleDemoView()
                 } label: {
-                    Label(.init("toggle"), systemImage: "switch.2")
+                    Label("Toggle", systemImage: "switch.2")
                 }
                 
                 NavigationLink {
                     ViewThatFitsDemoView()
                 } label: {
-                    Label(.init("viewThatFits"), systemImage: "arrow.up.left.and.arrow.down.right")
+                    Label("View That Fits", systemImage: "arrow.up.left.and.arrow.down.right")
                 }
                 
                 NavigationLink {
                     WebViewDemoView()
                 } label: {
-                    Label(.init("webView"), systemImage: "network")
+                    Label("Web View", systemImage: "network")
                 }
             }
             
-            Section(.init("Modifiers")) {
+            Section("Modifiers") {
                 NavigationLink {
                     GlassEffectDemoView()
                 } label: {
-                    Label(.init("glassEffect"), systemImage: "slider.horizontal.below.circle.lefthalf.filled")
+                    Label("Glass Effect", systemImage: "slider.horizontal.below.circle.lefthalf.filled")
                 }
                 
                 NavigationLink {
                     SearchableDemoView()
                 } label: {
-                    Label(.init("searchable"), systemImage: "magnifyingglass")
+                    Label("Searchable", systemImage: "magnifyingglass")
                 }
                 
                 NavigationLink {
                     ToolbarDemoView()
                 } label: {
-                    Label(.init("toolBar"), systemImage: "platter.filled.top.iphone")
+                    Label("Tool Bar", systemImage: "platter.filled.top.iphone")
                 }
             }
         }

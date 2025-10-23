@@ -10,11 +10,11 @@ import SwiftUI
 struct GroupBoxDemoView: View {
     var body: some View {
         List {
-            Section(.init("default")) {
+            Section("Default") {
                 getGroupBox()
             }
             
-            Section(.init("customStyle")) {
+            Section("Custom Style") {
                 getGroupBox()
                     .groupBoxStyle(CardGroupBoxStyle())
                 
@@ -24,20 +24,20 @@ struct GroupBoxDemoView: View {
             }
         }
         .listStyle(.grouped)
-        .navigationTitle(.init("groupBox"))
+        .navigationTitle("Group Box")
     }
     
     @ViewBuilder
     private func getGroupBox() -> some View {
         GroupBox {
             VStack(alignment: .leading) {
-                Text(.init("someContent"))
+                Text("Some Content")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         } label: {
             VStack {
                 HStack {
-                    Text(.init("title"))
+                    Text("Title")
                     Spacer()
                     Image(systemName: "apple.logo")
                 }

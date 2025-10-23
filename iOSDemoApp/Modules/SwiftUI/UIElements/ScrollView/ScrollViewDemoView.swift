@@ -75,13 +75,13 @@ struct ScrollViewDemoView: View {
     var verticalScroll: some View {
         ScrollView {
             VStack(spacing: 500) {
-                Text(.init("scrollViewTop"))
+                Text("Scroll View Top")
                     .font(.title)
                 Image(systemName: "arrow.down")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
-                Text(.init("scrollViewBottom"))
+                Text("Scroll View Bottom")
                     .font(.title)
             }
             .padding()
@@ -92,13 +92,13 @@ struct ScrollViewDemoView: View {
     var horizontalScroll: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 100) {
-                Text(.init("scrollViewTop"))
+                Text("Scroll View Top")
                     .font(.title)
                 Image(systemName: "arrow.right")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
-                Text(.init("scrollViewBottom"))
+                Text("Scroll View Bottom")
                     .font(.title)
             }
             .padding()
@@ -108,7 +108,7 @@ struct ScrollViewDemoView: View {
     
     var body: some View {
         getScrollView()
-        .navigationTitle(.init("scrollView"))
+        .navigationTitle("Scroll View")
         .navigationBarTitleDisplayMode(.inline)
         .background {
             Color(.systemGroupedBackground)
@@ -117,11 +117,11 @@ struct ScrollViewDemoView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
-                    Picker(.init("axis"), selection: $currentAxis) {
-                        Label(.init("vertical"), systemImage: "arrow.up.arrow.down").tag(ScrollViewDemoViewAxis.vertical)
-                        Label(.init("horizontal"), systemImage: "arrow.left.arrow.right").tag(ScrollViewDemoViewAxis.horizontal)
+                    Picker("Axis", selection: $currentAxis) {
+                        Label("Vertical", systemImage: "arrow.up.arrow.down").tag(ScrollViewDemoViewAxis.vertical)
+                        Label("Horizontal", systemImage: "arrow.left.arrow.right").tag(ScrollViewDemoViewAxis.horizontal)
                         Label {
-                            Text(.init("both"))
+                            Text("Both")
                         } icon: {
                             ZStack {
                                 Image(systemName: "arrow.up.left.and.arrow.down.right")

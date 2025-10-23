@@ -16,16 +16,16 @@ struct SliderDemoView: View {
     
     var body: some View {
         list
-            .navigationTitle(Text(.init("slider")))
+            .navigationTitle("Slider")
     }
     
     var list: some View {
         List {
-            Section(.init("initialization")) {
+            Section("Initialization") {
                 Slider(value: $valueOne, in: 0...100, step: 5)
                 
                 Slider(value: $valueThree, in: 0...10, step: 1, neutralValue: nil, enabledBounds: nil) {
-                    Text(.init("label"))
+                    Text("Label")
                 } currentValueLabel: {
                     Text("\(valueThree)")
                 } minimumValueLabel: {

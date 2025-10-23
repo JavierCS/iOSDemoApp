@@ -12,11 +12,11 @@ struct NavigationStackDemoView: View {
         NavigationStack {
             NavigationLink {
                 EmptyView()
-                    .navigationTitle(Text(.init("someOtherEmptyView")))
+                    .navigationTitle("Some Other Empty View")
             } label: {
-                Text(.init("showOtherView"))
+                Text("Show other view")
             }
-            .navigationTitle(Text(.init("someEmptyView")))
+            .navigationTitle("Some Empty View")
         }
     }
 }

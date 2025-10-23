@@ -8,13 +8,9 @@
 import SwiftUI
 
 enum StackHorientation: String, CaseIterable {
-    case v
-    case h
-    case z
-    
-    func localizedName() -> String {
-        NSLocalizedString(rawValue, comment: .empty)
-    }
+    case v = "V Stack"
+    case h = "H Stack"
+    case z = "Z Stack"
     
     func systemImageName() -> String {
         switch self {
@@ -33,17 +29,17 @@ struct StacksDemoView: View {
     
     var body: some View {
         List {
-            Section(horientation.localizedName()) {
+            Section(horientation.rawValue) {
                 getStack()
             }
         }
-        .navigationTitle(.init("stackViews"))
+        .navigationTitle("Stack View")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
                     Picker(.init(.empty), selection: $horientation) {
                         ForEach(StackHorientation.allCases, id: \.self) { horientation in
-                            Label(horientation.localizedName(), systemImage: horientation.systemImageName()).tag(horientation)
+                            Label(horientation.rawValue, systemImage: horientation.systemImageName()).tag(horientation)
                         }
                     }
                 } label: {
@@ -61,6 +57,7 @@ struct StacksDemoView: View {
             VStack {
                 getShapes()
             }
+            .frame(maxWidth: .infinity)
         case .h:
             HStack {
                 getShapes()
@@ -69,6 +66,7 @@ struct StacksDemoView: View {
             ZStack {
                 getShapes()
             }
+            .frame(maxWidth: .infinity)
         }
     }
     

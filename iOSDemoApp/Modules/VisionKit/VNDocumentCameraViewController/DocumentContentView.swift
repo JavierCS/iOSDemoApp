@@ -16,7 +16,7 @@ struct DocumentContentView: View {
     
     var list: some View {
         List {
-            Section(.init("image")) {
+            Section("Image") {
                 HStack {
                     Spacer()
                     Image(uiImage: content.image)
@@ -24,11 +24,11 @@ struct DocumentContentView: View {
                 }
             }
             
-            Section(.init("fullText")) {
+            Section("Full Text") {
                 Text(content.result.fullText)
             }
             
-            Section(.init("lines")) {
+            Section("Lines") {
                 ForEach(content.result.lines, id: \.self) { line in
                     Text(line)
                 }

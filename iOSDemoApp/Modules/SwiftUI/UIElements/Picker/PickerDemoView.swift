@@ -20,25 +20,25 @@ struct PickerDemoView: View {
     
     var body: some View {
         list
-            .navigationTitle(Text(.init("picker")))
+            .navigationTitle("Picker")
     }
     
     var list: some View {
         List {
-            Picker(.init("inlinePickerStyle"), selection: $selectedItem) {
+            Picker("Inline Picker Style", selection: $selectedItem) {
                 ForEach(PickerItem.allCases, id: \.self) { item in
                     Text(item.rawValue)
                 }
             }.pickerStyle(.inline)
             
-            Section(.init("menuPickerStyle")) {
-                Picker(.init("menuPickerStyle"), selection: $selectedItem) {
+            Section("Menu Picker Style") {
+                Picker("Menu Picker Style", selection: $selectedItem) {
                     ForEach(PickerItem.allCases, id: \.self) { item in
                         Text(item.rawValue)
                     }
                 }.pickerStyle(.menu)
                 
-                Picker(.init("menuPickerStyle"), selection: $selectedItem) {
+                Picker("Menu Picker Style", selection: $selectedItem) {
                     ForEach(PickerItem.allCases, id: \.self) { item in
                         Text(item.rawValue)
                     }
@@ -47,14 +47,14 @@ struct PickerDemoView: View {
                 .tint(.pink)
             }
             
-            Section(.init("navigationLinkPicker")) {
-                Picker(.init("navigationLinkPicker"), selection: $selectedItem) {
+            Section("Navigation Link Picker") {
+                Picker("Navigation Link Picker", selection: $selectedItem) {
                     ForEach(PickerItem.allCases, id: \.self) { item in
                         Text(item.rawValue)
                     }
                 }.pickerStyle(.navigationLink)
                 
-                Picker(.init("navigationLinkPicker"), selection: $selectedItem) {
+                Picker("Navigation Link Picker", selection: $selectedItem) {
                     ForEach(PickerItem.allCases, id: \.self) { item in
                         Text(item.rawValue)
                     }
@@ -63,30 +63,24 @@ struct PickerDemoView: View {
                 .tint(.pink)
             }
             
-            Section(.init("palettePickerStyle")) {
-                Picker(.init("palettePickerStyle"), selection: $selectedItem) {
+            Section("Palette Picker Style") {
+                Picker("Palette Picker Style", selection: $selectedItem) {
                     ForEach(PickerItem.allCases, id: \.self) { item in
                         Text(item.rawValue)
                     }
                 }.pickerStyle(.palette)
             }
             
-//            Picker(.init("picker"), selection: $selectedItem) {
-//                ForEach(PickerItem.allCases, id: \.self) { item in
-//                    Text(item.rawValue)
-//                }
-//            }.pickerStyle(.radioGroup)
-            
-            Section(.init("segmentedPickerStyle")) {
-                Picker(.init("segmentedPickerStyle"), selection: $selectedItem) {
+            Section("Segmented Picker Style") {
+                Picker("Segmented Picker Style", selection: $selectedItem) {
                     ForEach(PickerItem.allCases, id: \.self) { item in
                         Text(item.rawValue)
                     }
                 }.pickerStyle(.segmented)
             }
             
-            Section(.init("wheelPickerStyle")) {
-                Picker(.init("wheelPickerStyle"), selection: $selectedItem) {
+            Section("Wheel Picker Style") {
+                Picker("Wheel Picker Style", selection: $selectedItem) {
                     ForEach(PickerItem.allCases, id: \.self) { item in
                         Text(item.rawValue)
                     }

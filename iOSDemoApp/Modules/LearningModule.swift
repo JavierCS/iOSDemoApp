@@ -9,12 +9,12 @@ import UIKit
 import SwiftUI
 
 enum LearningModule: String, CaseIterable, NavigationItem {
-    case swiftui
-    case uikit
-    case visionKit
+    case swiftui = "SwiftUI"
+    case uikit = "UIKit"
+    case visionKit = "VisionKit"
     
     func title() -> String {
-        NSLocalizedString(rawValue, comment: .empty)
+        rawValue
     }
     
     func image() -> UIImage? {
@@ -45,7 +45,7 @@ enum LearningModule: String, CaseIterable, NavigationItem {
     }
     
     static func listController() -> NavigationItemsList {
-        let listTitle = NSLocalizedString("modules", comment: .empty)
+        let listTitle = "Modules"
         let list = NavigationItemsList(
             title: listTitle,
             dataSource: [

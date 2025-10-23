@@ -16,6 +16,6 @@ struct RedBorderedLabelStyle: LabelStyle {
 }
 
 #Preview {
-    Label(.init("label"), systemImage: "swift")
+    Label("Label", systemImage: "swift")
         .labelStyle(RedBorderedLabelStyle())
 }

@@ -14,13 +14,9 @@ enum NotifyMeAboutType: String, CaseIterable {
 }
 
 enum ProfileImageSize: String, CaseIterable {
-    case large
-    case medium
-    case small
-    
-    func localizedText() -> String {
-        NSLocalizedString(rawValue, comment: .empty)
-    }
+    case large = "Large"
+    case medium = "Medium"
+    case small = "Small"
 }
 
 struct FormDemoView: View {
@@ -44,7 +40,7 @@ struct FormDemoView: View {
             Section("User Profiles") {
                 Picker("Profile image size", selection: $profileImageSize) {
                     ForEach(ProfileImageSize.allCases, id: \.self) { imageSize in
-                        Text(imageSize.localizedText()).tag(imageSize)
+                        Text(imageSize.rawValue).tag(imageSize)
                     }
                 }
                 Button("Clear image cache") {}

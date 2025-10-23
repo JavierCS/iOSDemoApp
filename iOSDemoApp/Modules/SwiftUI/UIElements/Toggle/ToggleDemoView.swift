@@ -13,36 +13,36 @@ struct ToggleDemoView: View {
     
     var body: some View {
         list
-            .navigationTitle(Text(.init("Toggle")))
+            .navigationTitle("Toggle")
     }
     
     var list: some View {
         List {
             Toggle(isOn: $isToggleOn) {
-                Label(.init("labeled"), systemImage: "switch.2")
+                Label("Labeled", systemImage: "switch.2")
             }
             
-            Toggle(.init("tinted"), isOn: $isToggleOn)
+            Toggle("Tinted", isOn: $isToggleOn)
                 .tint(.blue)
             
-            Toggle(.init("offState"), isOn: $offState)
+            Toggle("Off State", isOn: $offState)
             
-            Toggle(.init("disabled"), isOn: $isToggleOn)
+            Toggle("Disabled", isOn: $isToggleOn)
                 .disabled(true)
             
-            Section(.init("style")) {
+            Section("Style") {
                 HStack {
-                    Text(.init("buttonStyle"))
+                    Text("Button Style")
                     Spacer()
-                    Toggle(.init("toggle"), isOn: $isToggleOn)
+                    Toggle("Toggle", isOn: $isToggleOn)
                         .toggleStyle(.button)
                 }
                 
-                Toggle(.init("switchStyle"), isOn: $isToggleOn)
+                Toggle("Switch Style", isOn: $isToggleOn)
                     .toggleStyle(.switch)
                 
                 HStack {
-                    Text(.init("customStyle"))
+                    Text("Custom Style")
                     Spacer()
                     Toggle(.init(String.empty), isOn: $isToggleOn)
                         .toggleStyle(VintageToggleStyle())
@@ -57,5 +57,3 @@ struct ToggleDemoView: View {
         ToggleDemoView()
     }
 }
-
-

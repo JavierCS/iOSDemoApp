@@ -8,22 +8,18 @@
 import UIKit
 
 enum UIButtonDemoStyle: String, CaseIterable {
-    case borderedButton
-    case borderedProminentButton
-    case borderedTintedButton
-    case borderlessButton
-    case clearGlassButton
-    case filledButton
-    case glassButton
-    case grayButton
-    case plainButton
-    case prominentClearGlassButton
-    case prominentGlassButton
-    case tintedButton
-    
-    func name() -> String {
-        NSLocalizedString(rawValue, comment: .empty)
-    }
+    case borderedButton = "Bordered Button"
+    case borderedProminentButton = "Bordered Prominent Button"
+    case borderedTintedButton = "Bordered Tinted Button"
+    case borderlessButton = "Borderless Button"
+    case clearGlassButton = "Clear Glass Button"
+    case filledButton = "Filled Button"
+    case glassButton = "Glass Button"
+    case grayButton = "Gray Button"
+    case plainButton = "Plain Button"
+    case prominentClearGlassButton = "Prominent Clear Glass Button"
+    case prominentGlassButton = "Prominent Glass Button"
+    case tintedButton = "Tinted Button"
     
     func configuration() -> UIButton.Configuration? {
         switch self {
