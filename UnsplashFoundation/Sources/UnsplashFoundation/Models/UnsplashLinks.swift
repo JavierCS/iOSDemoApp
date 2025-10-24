@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UnsplashLinks: Codable {
+public struct UnsplashLinks: Codable, Sendable {
     public let my: URL?
     public let html: URL?
     public let download: URL?

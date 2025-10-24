@@ -9,7 +9,7 @@ import Foundation
 import NetworkFoundation
 import iOSDemoAppFoundation
 
-public struct UnsplashSlugs: Codable {
+public struct UnsplashSlugs: Codable, Sendable {
     public let en: String?
     public let es: String?
     public let ja: String?

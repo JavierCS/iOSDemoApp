@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum VisionKitComponent: String, CaseIterable, NavigationItem {
+enum VisionKitComponent: String, CaseIterable, @MainActor NavigationItem {
     case vnDocumentCameraViewController = "VNDocumentCameraViewController"
     
     func title() -> String {
@@ -21,6 +21,7 @@ enum VisionKitComponent: String, CaseIterable, NavigationItem {
         }
     }
     
+    @MainActor
     func navigationDestination() -> UIViewController {
         return VNDocumentCameraViewControllerDemo()
     }
@@ -32,6 +33,7 @@ enum VisionKitComponent: String, CaseIterable, NavigationItem {
         }
     }
     
+    @MainActor
     static func listController() -> NavigationItemsList {
         let listTitle = "VisionKit"
         let listController = NavigationItemsList(

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UnsplashUser: Codable {
+public struct UnsplashUser: Codable, Sendable {
     public let id: String?
     public let updated_at: Date?
     public let username: String?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UnsplashSocial: Codable {
+public struct UnsplashSocial: Codable, Sendable {
     public let instagram_username: String?
     public let portfolio_url: URL?
     public let twitter_username: String?

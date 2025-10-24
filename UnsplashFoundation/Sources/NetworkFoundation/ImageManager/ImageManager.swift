@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class ImageManager: @unchecked Sendable {
+public actor ImageManager {
     public static let shared: ImageManager = .init()
     let cache: NSCache<NSString, UIImage> = .init()
     

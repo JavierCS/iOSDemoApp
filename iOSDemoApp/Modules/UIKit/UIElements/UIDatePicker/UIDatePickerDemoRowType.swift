@@ -11,6 +11,7 @@ enum UIDatePickerDemoRowType {
     case style(style: UIDatePickerStyle)
     case inputView
     
+    @MainActor
     func row(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         switch self {
         case .style(let style):

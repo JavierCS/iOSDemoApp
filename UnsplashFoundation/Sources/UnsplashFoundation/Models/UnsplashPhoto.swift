@@ -8,7 +8,7 @@
 import Foundation
 import NetworkFoundation
 
-public struct UnsplashPhoto: Codable {
+public struct UnsplashPhoto: Codable, Sendable {
     public let id: String?
     public let slug: String?
     public let alternative_slugs: UnsplashSlugs?
@@ -39,7 +39,7 @@ public struct UnsplashPhoto: Codable {
     // MARK: Network Management
     public static func get() async throws -> [UnsplashPhoto] {
         do {
-            let url = try UnsplashAPIPath.urlForPath(for: .photosPath)
+            let url = try await UnsplashAPIPath.urlForPath(for: .photosPath)
             let photos = try await NetworkDataManager.shared.get(responseType: [UnsplashPhoto].self, from: url)
             return photos
         } catch {

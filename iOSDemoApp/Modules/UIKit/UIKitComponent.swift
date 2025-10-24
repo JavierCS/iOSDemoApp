@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum UIKitComponent: String, CaseIterable, NavigationItem {
+enum UIKitComponent: String, CaseIterable, @MainActor NavigationItem {
     case uiActivityIndicator = "UIActivityIndicator"
     case uiButton = "UIButton"
     case uiDatePicker = "UIDatePicker"
@@ -79,6 +79,7 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
         }
     }
     
+    @MainActor
     func navigationDestination() -> UIViewController {
         switch self {
         case .uiActivityIndicator:
@@ -136,6 +137,7 @@ enum UIKitComponent: String, CaseIterable, NavigationItem {
         }
     }
     
+    @MainActor
     static func listController() -> NavigationItemsList {
         let listTitle = "UIKit"
         let listController = NavigationItemsList(

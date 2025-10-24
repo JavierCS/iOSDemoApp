@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class NetworkDataManager: @unchecked Sendable {
+public actor NetworkDataManager {
     public static let shared: NetworkDataManager = .init()
     private let session: URLSession
     

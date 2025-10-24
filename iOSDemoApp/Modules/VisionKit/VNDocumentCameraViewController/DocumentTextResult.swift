@@ -7,7 +7,7 @@
 
 import Vision
 
-struct DocumentTextResult {
+struct DocumentTextResult: @unchecked Sendable {
     let fullText: String
     let lines: [String]
     let rawObservations: [VNRecognizedTextObservation]

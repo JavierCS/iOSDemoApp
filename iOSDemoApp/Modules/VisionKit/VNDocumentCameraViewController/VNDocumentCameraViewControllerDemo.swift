@@ -88,7 +88,7 @@ extension VNDocumentCameraViewControllerDemo: UICollectionViewDelegateFlowLayout
 }
 
 // MARK: - VNDocumentCameraViewControllerDelegate Management
-extension VNDocumentCameraViewControllerDemo: VNDocumentCameraViewControllerDelegate {
+extension VNDocumentCameraViewControllerDemo: @MainActor VNDocumentCameraViewControllerDelegate {
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
         Task {
             var combined = [(image: UIImage, result: DocumentTextResult)]()

@@ -1,7 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-public final class UnsplashFoundation: @unchecked Sendable {
+public actor UnsplashFoundation {
     public static let shared = UnsplashFoundation()
     
     var unsplash_access_key: String?

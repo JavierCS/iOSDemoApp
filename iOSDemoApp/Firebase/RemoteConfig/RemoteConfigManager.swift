@@ -7,18 +7,14 @@
 
 import FirebaseRemoteConfig
 
-final class RemoteConfigManager {
+actor RemoteConfigManager {
     static let shared: RemoteConfigManager = .init()
     private let remoteConfig = RemoteConfig.remoteConfig()
     
     private init() {}
     
-    func setUp() {
-        Task {
-            do {
-                try await fetchRemoteValues()
-            } catch {}
-        }
+    func setUp() async throws {
+        try await fetchRemoteValues()
     }
     
     func fetchRemoteValues() async throws {

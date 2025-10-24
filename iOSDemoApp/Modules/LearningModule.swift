@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-enum LearningModule: String, CaseIterable, NavigationItem {
+enum LearningModule: String, CaseIterable, @MainActor NavigationItem {
     case swiftui = "SwiftUI"
     case uikit = "UIKit"
     case visionKit = "VisionKit"
@@ -21,6 +21,7 @@ enum LearningModule: String, CaseIterable, NavigationItem {
         UIImage(systemName: "swift")
     }
     
+    @MainActor
     func navigationDestination() -> UIViewController {
         switch self {
         case .swiftui:
@@ -44,6 +45,7 @@ enum LearningModule: String, CaseIterable, NavigationItem {
         }
     }
     
+    @MainActor
     static func listController() -> NavigationItemsList {
         let listTitle = "Modules"
         let list = NavigationItemsList(

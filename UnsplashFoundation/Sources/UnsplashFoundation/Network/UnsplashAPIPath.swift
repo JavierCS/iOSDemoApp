@@ -10,8 +10,8 @@ import Foundation
 public enum UnsplashAPIPath: String {
     case photosPath = "photos"
     
-    static func urlForPath(for path: UnsplashAPIPath) throws -> URL {
-        guard let url = try URL.unsplashBaseURL()?.appending(path: path.rawValue).withTokenQuery() else { throw UnsplashAPIError.cantBuildURL }
+    static func urlForPath(for path: UnsplashAPIPath) async throws -> URL {
+        guard let url = try await URL.unsplashBaseURL()?.appending(path: path.rawValue).withTokenQuery() else { throw UnsplashAPIError.cantBuildURL }
         return url
     }
 }

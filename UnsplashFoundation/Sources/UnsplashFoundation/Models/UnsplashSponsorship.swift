@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UnsplashSponsorship: Codable {
+public struct UnsplashSponsorship: Codable, Sendable {
 //    public let impression_urls: []
     public let tagline: String?
     public let tagline_url: URL?
