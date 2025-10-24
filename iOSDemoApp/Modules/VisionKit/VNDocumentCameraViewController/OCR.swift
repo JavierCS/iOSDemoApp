@@ -7,6 +7,7 @@
 
 import UIKit
 import Vision
+import iOSDemoAppFoundation
 
 enum OCR {
     static func recognizeText(in image: UIImage, languages: [String] = ["es-MX", "es-ES", "en-US"], level: VNRequestTextRecognitionLevel = .accurate) async throws -> DocumentTextResult {

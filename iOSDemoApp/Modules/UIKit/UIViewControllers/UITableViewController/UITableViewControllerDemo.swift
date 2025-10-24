@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UnsplashFoundation
 
 final class UITableViewControllerDemo: UITableViewController {
     // MARK: Logic Vars

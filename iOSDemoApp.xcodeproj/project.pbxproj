@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		63E357542E714116008F8382 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 63E357532E714116008F8382 /* FirebaseRemoteConfig */; };
+		7F103D002EABD7BB00C2D3E8 /* UnsplashFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 7F103CFF2EABD7BB00C2D3E8 /* UnsplashFoundation */; };
+		7F103D032EABEEFF00C2D3E8 /* iOSDemoAppFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 7F103D022EABEEFF00C2D3E8 /* iOSDemoAppFoundation */; };
+		7F103D052EABEEFF00C2D3E8 /* NetworkFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 7F103D042EABEEFF00C2D3E8 /* NetworkFoundation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F103CFD2EABD7A500C2D3E8 /* UnsplashFoundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UnsplashFoundation; sourceTree = "<group>"; };
 		7F3E37F42E57A2D40066FB8E /* iOSDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3E380A2E57A2D60066FB8E /* iOSDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3E38142E57A2D60066FB8E /* iOSDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +53,9 @@
 				Modules/SwiftUI/UIElements/ColorPicker/ColorPickerDemoView.swift,
 				Modules/SwiftUI/UIElements/Divider/DividerDemoView.swift,
 				Modules/SwiftUI/UIElements/Form/FormDemoView.swift,
+				Modules/SwiftUI/UIElements/Grid/GridContentDemoView.swift,
+				Modules/SwiftUI/UIElements/Grid/LazyHGridDemoView.swift,
+				Modules/SwiftUI/UIElements/Grid/LazyVGridDemoView.swift,
 				Modules/SwiftUI/UIElements/Grid/SFSymbolIcon.swift,
 				Modules/SwiftUI/UIElements/Group/GroupDemoView.swift,
 				Modules/SwiftUI/UIElements/GroupBox/CardGroupBoxStyle.swift,
@@ -79,6 +86,9 @@
 				Modules/SwiftUI/UIElements/ColorPicker/ColorPickerDemoView.swift,
 				Modules/SwiftUI/UIElements/Divider/DividerDemoView.swift,
 				Modules/SwiftUI/UIElements/Form/FormDemoView.swift,
+				Modules/SwiftUI/UIElements/Grid/GridContentDemoView.swift,
+				Modules/SwiftUI/UIElements/Grid/LazyHGridDemoView.swift,
+				Modules/SwiftUI/UIElements/Grid/LazyVGridDemoView.swift,
 				Modules/SwiftUI/UIElements/Grid/SFSymbolIcon.swift,
 				Modules/SwiftUI/UIElements/Group/GroupDemoView.swift,
 				Modules/SwiftUI/UIElements/GroupBox/CardGroupBoxStyle.swift,
@@ -132,6 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				63E357542E714116008F8382 /* FirebaseRemoteConfig in Frameworks */,
+				7F103D002EABD7BB00C2D3E8 /* UnsplashFoundation in Frameworks */,
+				7F103D052EABEEFF00C2D3E8 /* NetworkFoundation in Frameworks */,
+				7F103D032EABEEFF00C2D3E8 /* iOSDemoAppFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,12 +165,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F103D012EABEEFF00C2D3E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F3E37EB2E57A2D40066FB8E = {
 			isa = PBXGroup;
 			children = (
+				7F103CFD2EABD7A500C2D3E8 /* UnsplashFoundation */,
 				7F3E37F62E57A2D40066FB8E /* iOSDemoApp */,
 				7F3E380D2E57A2D60066FB8E /* iOSDemoAppTests */,
 				7F3E38172E57A2D60066FB8E /* iOSDemoAppUITests */,
+				7F103D012EABEEFF00C2D3E8 /* Frameworks */,
 				7F3E37F52E57A2D40066FB8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -193,6 +215,9 @@
 			name = iOSDemoApp;
 			packageProductDependencies = (
 				63E357532E714116008F8382 /* FirebaseRemoteConfig */,
+				7F103CFF2EABD7BB00C2D3E8 /* UnsplashFoundation */,
+				7F103D022EABEEFF00C2D3E8 /* iOSDemoAppFoundation */,
+				7F103D042EABEEFF00C2D3E8 /* NetworkFoundation */,
 			);
 			productName = iOSDemoApp;
 			productReference = 7F3E37F42E57A2D40066FB8E /* iOSDemoApp.app */;
@@ -278,6 +303,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				63E357522E714116008F8382 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7F103CFE2EABD7BB00C2D3E8 /* XCLocalSwiftPackageReference "UnsplashFoundation" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7F3E37F52E57A2D40066FB8E /* Products */;
@@ -645,6 +671,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		7F103CFE2EABD7BB00C2D3E8 /* XCLocalSwiftPackageReference "UnsplashFoundation" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = UnsplashFoundation;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		63E357522E714116008F8382 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -661,6 +694,18 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 63E357522E714116008F8382 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		7F103CFF2EABD7BB00C2D3E8 /* UnsplashFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UnsplashFoundation;
+		};
+		7F103D022EABEEFF00C2D3E8 /* iOSDemoAppFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iOSDemoAppFoundation;
+		};
+		7F103D042EABEEFF00C2D3E8 /* NetworkFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkFoundation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

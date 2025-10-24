@@ -67,7 +67,7 @@ struct SwiftUIListView: View {
                 }
                 
                 NavigationLink {
-                    GridDemoView()
+                    GridContentDemoView()
                 } label: {
                     Label("Grid", systemImage: "square.grid.3x3")
                 }

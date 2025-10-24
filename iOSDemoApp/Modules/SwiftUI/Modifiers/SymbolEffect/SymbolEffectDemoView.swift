@@ -17,47 +17,47 @@ struct SymbolEffectDemoView: View {
     
     var routerSymbols: some View {
         HStack {
-//            Image(systemName: "wifi.router")
-//                .symbolEffect(.variableColor, isActive: isConnecting)
-//            
-//            Image(systemName: "wifi.router")
-//                .symbolEffect(.variableColor.cumulative.reversing, isActive: isConnecting)
-//            
-//            Image(systemName: "wifi.router")
-//                .symbolEffect(.variableColor.iterative.reversing, isActive: isConnecting)
+            resizedImage(systemName: "wifi.router")
+                .symbolEffect(.variableColor, isActive: isConnecting)
+            
+            resizedImage(systemName: "wifi.router")
+                .symbolEffect(.variableColor.cumulative.reversing, isActive: isConnecting)
+            
+            resizedImage(systemName: "wifi.router")
+                .symbolEffect(.variableColor.iterative.reversing, isActive: isConnecting)
         }
     }
     
     var antennaSymbols: some View {
         HStack {
-//            resizedImage(systemName: "antenna.radiowaves.left.and.right")
-//                .symbolEffect(.bounce, value: bounceValue)
-//            
-//            resizedImage(systemName: "antenna.radiowaves.left.and.right")
-//                .symbolEffect(.bounce, options: .repeat(2), value: bounceValue)
-//            
-//            resizedImage(systemName: "antenna.radiowaves.left.and.right")
-//                .symbolEffect(.variableColor.iterative, options: .repeat(2), value: bounceValue)
+            resizedImage(systemName: "antenna.radiowaves.left.and.right")
+                .symbolEffect(.bounce, value: bounceValue)
+            
+            resizedImage(systemName: "antenna.radiowaves.left.and.right")
+                .symbolEffect(.bounce, options: .repeat(2), value: bounceValue)
+            
+            resizedImage(systemName: "antenna.radiowaves.left.and.right")
+                .symbolEffect(.variableColor.iterative, options: .repeat(2), value: bounceValue)
         }
     }
     
     var moonSymbols: some View {
         VStack {
-//            imageBetweenShapes()
-//                .symbolEffect(.disappear, isActive: isMoonHiden)
-//            imageBetweenShapesTwo()
-//                .transition(.symbolEffect(.disappear.down))
-//            imageBetweenShapesTwo()
-//                .transition(.symbolEffect(.automatic))
+            imageBetweenShapes()
+                .symbolEffect(.disappear, isActive: isMoonHiden)
+            imageBetweenShapesTwo()
+                .transition(.symbolEffect(.disappear.down))
+            imageBetweenShapesTwo()
+                .transition(.symbolEffect(.automatic))
         }
     }
     
     var groupedSymbols: some View {
         HStack { // Effects propagate through the view hierarchy
-//            Image(systemName: "heart.fill")
-//            Image(systemName: "apple.logo")
-//            Image(systemName: "swift")
-//                .symbolEffectsRemoved()
+            Image(systemName: "heart.fill")
+            Image(systemName: "apple.logo")
+            Image(systemName: "swift")
+                .symbolEffectsRemoved()
         }
         .symbolEffect(.bounce, options: .repeat(2))
         .frame(maxWidth: .infinity)
@@ -65,58 +65,58 @@ struct SymbolEffectDemoView: View {
     
     var list: some View {
         List {
-//            VStack(spacing: 16) {
-//                routerSymbols
-//                    .frame(maxWidth: .infinity)
-//                
-////                Image(systemName: "wifi.router")
-////                    .symbolEffect(.variableColor.iterative.reversing, isActive: isConnecting)
-////                    .symbolEffect(.scale.up)
-//                
-//                Button(isConnecting ? "Conect" : "Disconect") {
-//                    isConnecting.toggle()
-//                }
-//                .buttonStyle(.borderedProminent)
-//            }
+            VStack(spacing: 16) {
+                routerSymbols
+                    .frame(maxWidth: .infinity)
+                
+                Image(systemName: "wifi.router")
+                    .symbolEffect(.variableColor.iterative.reversing, isActive: isConnecting)
+                    .symbolEffect(.scale.up)
+                
+                Button(isConnecting ? "Conect" : "Disconect") {
+                    isConnecting.toggle()
+                }
+                .buttonStyle(.borderedProminent)
+            }
             
-//            VStack(spacing: 16) {
-//                antennaSymbols
-//                    .frame(maxWidth: .infinity)
-//                
-//                Button("Bounce") { bounceValue += 1 }
-//                    .buttonStyle(.borderedProminent)
-//            }
+            VStack(spacing: 16) {
+                antennaSymbols
+                    .frame(maxWidth: .infinity)
+                
+                Button("Bounce") { bounceValue += 1 }
+                    .buttonStyle(.borderedProminent)
+            }
             
-//            VStack(spacing: 16) {
-//                resizedImage(systemName: isPaused ? "play.fill" : "pause.fill" )
-//                    .contentTransition(.symbolEffect(.replace.downUp))
-//
-//                Button(isPaused ? "Play" : "Pause") { isPaused.toggle() }
-//                    .buttonStyle(.borderedProminent)
-//            }
-//            .frame(maxWidth: .infinity)
+            VStack(spacing: 16) {
+                resizedImage(systemName: isPaused ? "play.fill" : "pause.fill" )
+                    .contentTransition(.symbolEffect(.replace.downUp))
+
+                Button(isPaused ? "Play" : "Pause") { isPaused.toggle() }
+                    .buttonStyle(.borderedProminent)
+            }
+            .frame(maxWidth: .infinity)
             
-//            VStack {
-//                moonSymbols
-//                
-//                Button(isMoonHiden ? "Show" : "Hide") {
-//                    withAnimation {
-//                        isMoonHiden.toggle()
-//                    }
-//                }
-//                .buttonStyle(.borderedProminent)
-//            }
-//            .frame(maxWidth: .infinity)
+            VStack {
+                moonSymbols
+                
+                Button(isMoonHiden ? "Show" : "Hide") {
+                    withAnimation {
+                        isMoonHiden.toggle()
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+            }
+            .frame(maxWidth: .infinity)
             
-//            groupedSymbols
+            groupedSymbols
             
-//            VStack(spacing: 16) {
-//                resizedImage(systemName: "wifi", variableValue: wifiLevel)
-//                
-//                
-//                Stepper(String.empty, value: $wifiLevel, in: 0.0...1.0, step: 0.1).labelsHidden()
-//            }
-//            .frame(maxWidth: .infinity)
+            VStack(spacing: 16) {
+                resizedImage(systemName: "wifi", variableValue: wifiLevel)
+                
+                
+                Stepper(String.empty, value: $wifiLevel, in: 0.0...1.0, step: 0.1).labelsHidden()
+            }
+            .frame(maxWidth: .infinity)
         }
     }
     
