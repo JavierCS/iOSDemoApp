@@ -38,7 +38,7 @@ enum LearningModule: String, CaseIterable, NavigationItem {
     func transitionStyle() -> LearningTransitionStyle {
         switch self {
         case .swiftui:
-            return .present
+            return .fullScreenPresent
         default:
             return .push
         }

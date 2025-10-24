@@ -93,6 +93,9 @@ extension NavigationItemsList: UITableViewDelegate {
             present(destination, animated: true)
         case .push:
             show(destination, sender: nil)
+        case .fullScreenPresent:
+            destination.modalPresentationStyle = .overFullScreen
+            present(destination, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

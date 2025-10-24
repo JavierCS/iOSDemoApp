@@ -8,4 +8,5 @@
 enum LearningTransitionStyle {
     case push
     case present
+    case fullScreenPresent
 }
