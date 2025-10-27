@@ -8,7 +8,7 @@
 import Foundation
 import NetworkFoundation
 
-public struct UnsplashPhoto: Codable, Sendable {
+public struct UnsplashPhoto: Codable, Identifiable, Sendable {
     public let id: String?
     public let slug: String?
     public let alternative_slugs: UnsplashSlugs?
@@ -31,6 +31,51 @@ public struct UnsplashPhoto: Codable, Sendable {
     public let asset_type: String?
     public let user: UnsplashUser?
     
+    // MARK: Initialization Code
+    init(id: String?, slug: String?, alternative_slugs: UnsplashSlugs?, created_at: Date?, updated_at: Date?, promoted_at: Date?, width: Int?, height: Int?, blur_hash: String?, description: String?, alt_description: String?, urls: UnsplashUrls?, links: UnsplashLinks?, likes: Int?, liked_by_user: Bool, sponsorship: UnsplashSponsorship?, asset_type: String?, user: UnsplashUser?) {
+        self.id = id
+        self.slug = slug
+        self.alternative_slugs = alternative_slugs
+        self.created_at = created_at
+        self.updated_at = updated_at
+        self.promoted_at = promoted_at
+        self.width = width
+        self.height = height
+        self.blur_hash = blur_hash
+        self.description = description
+        self.alt_description = alt_description
+        self.urls = urls
+        self.links = links
+        self.likes = likes
+        self.liked_by_user = liked_by_user
+        self.sponsorship = sponsorship
+        self.asset_type = asset_type
+        self.user = user
+    }
+    
+    public static func mock() -> UnsplashPhoto {
+        return UnsplashPhoto(
+            id: "FLfNL6XuOEM",
+            slug: "mountain-peak-reflecting-in-calm-lake-at-sunrise-FLfNL6XuOEM",
+            alternative_slugs: .mock(),
+            created_at: .now,
+            updated_at: .now,
+            promoted_at: .now,
+            width: 5504,
+            height: 8256,
+            blur_hash: "LeEWRTWDj?of%%aeayayE3ofWBWB",
+            description: nil,
+            alt_description: "Mountain peak reflecting in calm lake at sunrise.",
+            urls: .mock(),
+            links: .mock(),
+            likes: 122,
+            liked_by_user: false,
+            sponsorship: nil,
+            asset_type: "photo",
+            user: .mock()
+        )
+    }
+    
     // MARK: Utils Functions
     public func localizedSlug() -> String? {
         return alternative_slugs?.localizedSlug()
@@ -45,6 +90,11 @@ public struct UnsplashPhoto: Codable, Sendable {
         } catch {
             throw error
         }
+    }
+    
+    public func downloadImageData(from url: URL?) async throws -> Data {
+        guard let url = url else { throw UnsplashAPIError.emptyURL }
+        return try await NetworkDataManager.shared.data(from: url)
     }
     
     // MARK: Drawing Functions

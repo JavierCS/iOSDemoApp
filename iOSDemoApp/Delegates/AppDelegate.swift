@@ -9,6 +9,7 @@ import UIKit
 
 import Firebase
 import FirebaseRemoteConfig
+import UnsplashFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         Task {
             try await RemoteConfigManager.shared.setUp()
+            let accessKey = await RemoteConfigManager.shared.configValue(for: .unsplash_access_key)
+            let applicationId = await RemoteConfigManager.shared.configValue(for: .unsplash_application_id)
+            let secretKey = await RemoteConfigManager.shared.configValue(for: .unsplash_secret_key)
+            await UnsplashFoundation.shared.configure(accessKey: accessKey.stringValue, applicationId: applicationId.stringValue, secretKey: secretKey.stringValue)
         }
         return true
     }

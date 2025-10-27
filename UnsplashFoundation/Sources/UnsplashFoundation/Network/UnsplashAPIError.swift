@@ -15,5 +15,6 @@ public enum UnsplashAPIError: Error {
     case secretKeyNotConfigured
     case emptySecretKey
     
+    case emptyURL
     case cantBuildURL
 }

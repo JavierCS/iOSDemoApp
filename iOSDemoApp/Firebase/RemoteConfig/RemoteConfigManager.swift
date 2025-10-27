@@ -26,3 +26,5 @@ actor RemoteConfigManager {
         remoteConfig.configValue(forKey: key.rawValue)
     }
 }
+
+extension RemoteConfigValue: @unchecked @retroactive Sendable {}
