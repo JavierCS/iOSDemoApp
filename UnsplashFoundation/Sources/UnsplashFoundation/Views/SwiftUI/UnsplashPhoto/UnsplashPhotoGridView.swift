@@ -6,9 +6,8 @@
 //
 
 import SwiftUI
-import UnsplashFoundation
 
-struct UnsplashPhotoGridView: View {
+public struct UnsplashPhotoGridView: View {
     @State private var imageData: Data?
     
     let photo: UnsplashPhoto
@@ -41,7 +40,7 @@ struct UnsplashPhotoGridView: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         VStack {
             validatedGridView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

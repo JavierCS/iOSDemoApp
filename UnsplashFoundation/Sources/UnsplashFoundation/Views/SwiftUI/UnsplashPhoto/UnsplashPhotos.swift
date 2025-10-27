@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UnsplashFoundation
 
 struct UnsplashPhotos: View {
     @State private var photos: [UnsplashPhoto] = .init()

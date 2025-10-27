@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import UnsplashFoundation
 
 struct SwiftUIListView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showNavigationSplitView: Bool = false
     @State private var showNavigationStack: Bool = false
+    @State private var showUnsplashFlow: Bool = false
     
     var body: some View {
         itemsList
@@ -31,6 +33,9 @@ struct SwiftUIListView: View {
             .sheet(isPresented: $showNavigationStack) {
                 NavigationStackDemoView()
             }
+            .sheet(isPresented: $showUnsplashFlow) {
+                UnsplashHomeView()
+            }
     }
     
     var itemsList: some View {
@@ -39,6 +44,7 @@ struct SwiftUIListView: View {
             modifiersSection
             unsplashSection
         }
+        .listStyle(.sidebar)
     }
     
     var uiElementsSection: some View {
@@ -261,8 +267,8 @@ struct SwiftUIListView: View {
     
     var unsplashSection: some View {
         Section("Unsplash") {
-            NavigationLink {
-                UnsplashPhotos()
+            Button {
+                showUnsplashFlow = true
             } label: {
                 Label {
                     Text("Unsplash")
