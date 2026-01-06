@@ -20,7 +20,7 @@ public struct UnsplashPhotoGridView: View {
                 .task {
                     await downloadImage()
                 }
-            Label("", systemImage: "apple")
+            Label("", systemImage: "apple.logo")
         }
     }
     
