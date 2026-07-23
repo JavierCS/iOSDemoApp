@@ -54,7 +54,7 @@ struct ScrollHintsView: View {
         proxy.scrollTo("End", anchor: .trailing)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let customCurve = Animation.timingCurve(0.15, 0.85, 0.3, 1.0, duration: 2.0)
+            let customCurve = Animation.timingCurve(0.35, 0.50, 0.15, 1.0, duration: 2.0)
             withAnimation(customCurve) {
                 proxy.scrollTo("Start", anchor: .leading)
             }
