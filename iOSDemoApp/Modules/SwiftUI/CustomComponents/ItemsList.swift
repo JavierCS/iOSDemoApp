@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ItemsList: View {
     var body: some View {
-        List(SimpleListItem.allCases, id: \.self) { item in
-            Text(item.rawValue)
+        List(SimpleListItem.allCases) { item in
+            Text(item.description)
         }
     }
 }

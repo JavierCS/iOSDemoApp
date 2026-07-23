@@ -42,6 +42,7 @@ struct SwiftUIListView: View {
         List {
             uiElementsSection
             modifiersSection
+            customComponentsSection
             unsplashSection
         }
         .listStyle(.sidebar)
@@ -261,6 +262,20 @@ struct SwiftUIListView: View {
                 ToolbarDemoView()
             } label: {
                 Label("Tool Bar", systemImage: "platter.filled.top.iphone")
+            }
+        }
+    }
+    
+    var customComponentsSection: some View {
+        Section("Custom Components") {
+            NavigationLink {
+                CustomComponentsList()
+            } label: {
+                Label {
+                    Text("Custom Components")
+                } icon: {
+                    Image(systemName: "gearshape.2")
+                }
             }
         }
     }

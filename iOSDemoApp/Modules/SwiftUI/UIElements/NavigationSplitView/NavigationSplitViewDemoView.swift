@@ -19,14 +19,14 @@ struct NavigationSplitViewDemoView: View {
     
     var navigationSplitView: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
-            List(SimpleListItem.allCases, id: \.self, selection: $selection) { item in
-                Text(item.rawValue)
+            List(SimpleListItem.allCases, selection: $selection) { item in
+                Text(item.description)
             }.navigationTitle("items")
         } detail: {
             if let item = selection {
                 Color(uiColor: .systemGroupedBackground)
                     .ignoresSafeArea()
-                    .navigationTitle(item.rawValue)
+                    .navigationTitle(item.description)
             } else {
                 ContentUnavailableView(
                     "selectAnItem",
