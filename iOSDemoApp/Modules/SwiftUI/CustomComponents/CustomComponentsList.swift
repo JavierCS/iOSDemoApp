@@ -16,7 +16,7 @@ struct CustomComponentsList: View {
     var componentsList: some View {
         List {
             NavigationLink {
-                ScrollHintsView()
+                ScrollHintDemoView()
             } label: {
                 Label {
                     Text("Scroll Hints")
